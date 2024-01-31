@@ -1,0 +1,9 @@
+h1 {
+    color: red;
+    font-size: 30px;
+}
+table{
+    width:95%;
+    margin:auto;
+    border: 1px solid black;
+}
