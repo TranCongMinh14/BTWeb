@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    height: 1089px;
+    width: 960px;
+    margin: auto;
+    border: 1px solid black;
+    
+}
+
+.nav {
+    width: 100%;
+    height: 5%;
+    position: relative;
+    line-height: 40px;
+    background-color: rgba(236, 222, 237, 255);
+}
+
+.nav li {
+    list-style: none;
+    position: absolute;
+    margin-left: 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: #492675;
+}
+
+li a:hover {
+    color: #374abb;
+}
+
+.nav li:nth-child(2) {
+    left: 8%;
+}
+
+.nav li:nth-child(3) {
+    left: 19%;
+}
+
+.nav li:nth-child(4) {
+    left: 30%;
+}
+
+.box {
+    position: absolute;
+    left: 60%;
+}
+
+header {
+    height: 33%;
+    width: 100%;
+}
+footer {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
+}
+
+section {
+    width: 70%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgb(180, 231, 231);
+ 
+}
+section div1 {
+    float: left;
+    width: 70%;
+    height: 55%;
+    background-color: rgba(225, 243, 247, 255);
+
+}
+section div2 {
+    float: right;
+    width: 50%;
+    height: 70%;
+    font-size: 20px;
+    margin-left: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    position: relative;
+    margin-right: 20px;
+    line-height: 30px;
+}
+aside {
+    width: 30%;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+}
+aside h2 {
+    border-bottom: 3px dashed #d59f57;
+    height: 8%;
+    text-align: center;
+    color: #cc2e11;
+    text-shadow: 3px 3px 3px #d59f57;
+}
+
+aside img {
+    width: 100%;
+    height: 20%;
+}
+
+aside img:hover {
+    transform: rotate(20deg);
+}
+
+.top_menu {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f2caf6;
+    color: #f2caf6;
+    list-style:none; 
+    margin: 0; 
+    text-decoration-color: red;
+}
+
+.top_menu li {
+    padding: 0 10px;
+    margin: 0 5px;
+    border-bottom: 1px solid #fdbaba;
+}
+
+.top_menu li a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.top_menu li:hover {
+    background-color: #ccc;
+}
+
+.search {
+    display: flex;
+    background-color: #ffffff;
+    margin-top: 10px;
+
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    background-color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    width: 200px;
+}
+
+.search button {
+    padding: 5px 10px;
+    background-color: #2a10f4;
+    color: #3027aa;
+    border: none; 
+    cursor: pointer; 
+}
