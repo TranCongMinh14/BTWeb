@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/kt.js"></script>
+</head>
+
+<body>
+    <h1>Kiểm tra biểu thức chính quy</h1>
+    <p>User:</p>
+    <input type="text" name="txtChuoi" id="txtChuoi">
+    <button onclick="kiemtraUSER();">Kiểm tra</button>
+
+    <p>Password:</p>
+    <input type="password" name="txtPass" id="txtPass">
+    <button onclick="kiemtraPASSWORD();">Kiểm tra</button>
+    <p>Tối thiểu tám ký tự, ít nhất một chữ cái và một số</p>
+
+    <p>Email:</p>
+    <input type="text" name="txtEmail" id="txtEmail">
+    <button onclick="kiemtraEmail();">Kiểm tra</button>
+    <p>
+        <li>Phải có ký tự @</li>
+        <li>Ký tự @ không nằm ở vị trí đầu</li>
+        <li>Phải có ít nhất một dấu . trong địa chỉ mail</li>
+        <li>Phải có ít nhất 1 ký tự giữa @ và dấu . cuối cùng</li>
+        <li>Phải có ít nhất 1 ký tự giữa @ và dấu . cuối cùng</li>
+        <li>Không có khoảng trắng trong địa chỉ mail
+    </p>
+
+    <p>Kiểm tra địa chỉ IPv4:</p>
+    <input type="text" name="txtIPv4" id="txtIPv4">
+    <button onclick="kiemtraIPv4();">Kiểm tra</button>
+    <p>all the parts must be less than 255</p>
+
+    <p>Matching a Hex Value:</p>
+    <input type="text" name="txtHexValue" id="txtHexValue">
+    <button onclick="kiemtraHexValue();">Kiểm tra</button>
+    <p>Tối đa 6 kí tự từ a-f và 0-9</p>
+
+    <p>Matching a Slug: </p>
+    <input type="text" name="txtSlug" id="txtSlug">
+    <button onclick="kiemtraSlug();">Kiểm tra</button>
+    <p>my-title-here đúng mẫu</p>
+
+    <p>Matching a url: </p>
+    <input type="text" name="txtURL" id="txtURL">
+    <button onclick="kiemtraURL();">Kiểm tra</button>
+    <p>https://www.example.com/path/to/file.html</p>
+</body>
+
+</html>
