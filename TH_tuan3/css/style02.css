@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1200px;
+    height: 800px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header {
+    width: 100%;
+    height: 20%;
+    background-color: #29507b;
+    position: relative;
+    font-size: 25px;
+    color: white;
+}
+
+.tieude {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.tieude h1 {
+    position: absolute;
+    top: 20px;
+    left: 130px;
+}
+
+.tieude p {
+    position: absolute;
+    top: 85px;
+    left: 130px;
+}
+
+.header li {
+    position: absolute;
+    list-style-type: none;
+    background-color: #3f71af;
+    height: 25%;
+    text-align: center;
+    border: 2px solid #3f71af;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+.header li:nth-child(1) {
+    top: 120px;
+    right: 580px;
+    width: 8%;
+}
+
+.header li:nth-child(2) {
+    top: 120px;
+    right: 450px;
+    width: 10%;
+}
+
+.header li:nth-child(3) {
+    top: 120px;
+    right: 280px;
+    width: 13%;
+}
+
+.header li:nth-child(4) {
+    top: 120px;
+    right: 90px;
+    width: 15%;
+}
+
+.header li:nth-child(5) {
+    top: 120px;
+    right: 5px;
+    width: 6%;
+}
+
+.search {
+    position: absolute;
+    width: 30%;
+    top: 20px;
+    right: 0px;
+    height: 100%;
+}
+
+.search input {
+    width: 80%;
+    height: 20%;
+    border: 1px solid white;
+    background-color: #0d2946;
+    color: white;
+}
+
+.search button {
+    width: 10%;
+    height: 20%;
+    background-color: #0d2946;
+    color: white;
+    border: 1px solid white;
+}
+
+.main {
+    width: 100%;
+    height: 80%;
+    font-size: 17px;
+}
+
+.section {
+    margin-top: 20px;
+    width: 30%;
+    height: 70%;
+    float: right;
+    line-height: 30px;
+    border: 2px solid rgb(244, 239, 239);
+}
+
+.section1 {
+    margin-top: 20px;
+    width: 70%;
+    height: 100%;
+    margin-left: 10px;
+    line-height: 25px;
+}
+
+.box {
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+table input,
+label {
+    margin-left: 10px;
+}
+
+.footer {
+    width: 100%;
+    height: 5%;
+    clear: both;
+    font-size: 15px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #29507b;
+    color: white;
+}

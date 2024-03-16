@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 1300px;
+        height: 1300px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrapper {
+        width: 99%;
+        height: 8%;
+        border-bottom: 1px solid black;
+    }
+
+    .wrapper>h1 {
+        line-height: 100px;
+        text-align: center;
+        /* căn giữa*/
+        color: rgb(255, 0, 0);
+        text-shadow: 10px 10px 10px red;
+    }
+
+    .header {
+        width: 99%;
+        height: 4%;
+        border-bottom: 1px solid black;
+        position: relative;
+        background-color: rgb(254, 142, 142);
+
+    }
+
+    .header li {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        line-height: 42px;
+        border-right: 1px solid black;
+    }
+
+    li a {
+        font-size: 20px;
+        text-decoration: none;
+        color: aliceblue;
+    }
+
+    .nav {
+        position: relative;
+    }
+
+    .temp {
+        position: absolute;
+        display: inline-block;
+    }
+
+    .temp p {
+        width: 20%;
+        text-align: center;
+        background-color: rgb(254, 142, 142);
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+    .main {
+        position: absolute;
+        display: inline-block;
+        width: 99%;
+        margin: 10px 20%;
+    }
+
+    .main h1 {
+        margin-left: 50px;
+        width: 30%;
+        background-color: rgb(254, 142, 142);
+        color: red;
+        border-radius: 10px;
+    }
+
+    .main a {
+        /* margin-left: -20px; */
+        color: red;
+    }
+
+    .envent {
+        width: 30%;
+        height: auto;
+        background-color: black;
+        position: absolute;
+        display: inline-block;
+        margin-left: 70%;
+    }
+
+    .envent img {
+        margin: 20px 60px;
+    }
+
+    .footer {
+        margin-top: 50%;
+        height: 5%;
+        text-align: center;
+        border: 1px solid brown;
+        background-color: rgb(254, 142, 142);
+        line-height: 50px;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <h1>EXAMPLE CAFE MENU </h1>
+    </div>
+    <div class="header">
+        <ul>
+            <li style="margin-left:100px ;">
+                <a href=""><img src="/img/Tuan2/Bai1/icons8-home-50.png" alt="" width="30%"></a>
+            </li>
+            <li style="margin-left: 50px;"><a href="#001">Starter</a></li>
+            <li style="margin-left: 50px;"><a href="">Counrses</a></li>
+            <li style="margin-left: 50px;"><a href="#002">Desserts</a></li>
+            <input type="text" name="" id="" style="margin-left: 100px; font-size: 15px;">
+            <input type="button" value="go" style="width: 40px;">
+        </ul>
+    </div>
+    <div class="nav">
+        <div class="temp">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <img src="/img/Tuan2/Bai1/company.png" alt="" style="border-radius: 50%;" width="20%">
+        </div>
+        <div class="main">
+            <div id="001" class="starter">
+                <h1>S T A R T E R</h1>
+                <ul>
+                    <li>Chesnut and Mushroom Goujons</li>
+                    <li>Goat Cheese</li>
+                    <li style="color: darkgoldenrod;">HONEY SOY CHICKEN KEBABS</li>
+                    <li>Seafood Salad</li>
+                </ul>
+                <a href="" style="margin-left: -20px;">Back to top</a>
+            </div>
+            <div id="002" class="Desserts">
+                <h1>D E S S E R T S</h1>
+                <ul>
+                    <li>Lemon Sorbet <a href="">(v)</a></li>
+                    <li>Chocolate Mud Pie <a href="">(v)</a></li>
+                    <li>Pecan Pie <a href="">(v)</a></li>
+                    <li>Selection of fine Cheeses From Around the World <a href="">(v)</a></li>
+                </ul>
+                <a href="" style="margin-left: -20px;">Back to top</a>
+            </div>
+            <div id="003" class="information">
+                <h1>I N F O R M A T I O N</h1>
+                <br>
+                <input type="text" placeholder="First Name">
+                <input type="text" style="margin-left: 10px;" placeholder="Last Name">
+                <br><br>
+                <input type="text" placeholder="Email">
+                <input type="text" style="margin-left: 10px;" placeholder="Telephone">
+                <br><br>
+                <input type="text" placeholder="USA">
+                <input type="radio">
+                <label for="">Vietnamese</label>
+                <input type="radio">
+                <label for="">Foramer</label>
+                <br><br>
+                <input type="text" name="" id="" style="width: 30%; height: 50px;" placeholder="comment">
+                <br><br>
+                <input type="button" value="Submit">
+                <input type="button" value="Cannel">
+            </div>
+        </div>
+        <div class="envent">
+            <h1 style="color: aliceblue;">Events</h1>br
+            <h3 style="color: aliceblue; margin-left: 60px;">Regular Meetings</h3>
+            <img src="/img/Tuan2/Bai1/meeting.png" alt="" width="50%">
+            <p style="color: aliceblue;">Host your regular team meetings or activities in the comfort of your own
+                private room. Charge up on Kith's aromatic coffee and delectable dishes for that extra boost in your
+                work!
+            </p>
+            <br>
+            <h3 style="color: aliceblue;margin-left: 60px;">Product Launches</h3>
+            <img src="/img/Tuan2/Bai1/launch.png" alt="" width="50%">
+            <p style="color: aliceblue;">Launch your product with ease in a space that truly fits its image. Create an
+                unforgettable experience for your guests with our spacious outlets! Whether you want to host an intimate
+                celebration or launch an event for hundreds of guests, Kith's
+                space is customisable to your needs</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p style="font-size: 30px; color: azure; font-style: italic; "><b>ABC Company <sup>R</sup>-12345678 -
+                abccoffee@gmail.com</b></p>
+    </div>
+</body>
+
+</html>

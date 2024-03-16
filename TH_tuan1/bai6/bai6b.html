@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .wrapper {
+        width: 690px;
+        height: 500px;
+        margin: 0px auto;
+        border: 1px solid blue;
+    }
+    
+    .main {
+        width: 97%;
+        height: 300px;
+        border: 1px solid black;
+        margin: 30px auto;
+        position: relative;
+    }
+    
+    .message {
+        position: absolute;
+        left: 20px;
+        top: -10px;
+        background-color: white;
+    }
+    
+    .section {
+        width: 97%;
+        height: 14%;
+        border: 1px solid black;
+        margin: 0px auto;
+        margin-top: -20px;
+        position: relative;
+    }
+    
+    form {
+        margin: 15px;
+    }
+    
+    form>input {
+        margin-left: 60px;
+        margin: 4px;
+        width: auto;
+    }
+    
+    form>select {
+        width: 100px;
+    }
+    
+    .footer {
+        position: absolute;
+        bottom: -28%;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <h1 style="margin-top: 10px;">Contact US</h1>
+        <div class="main">
+            <div class="message">Your message: </div>
+            <form action="">
+                <label for="">To</label>
+                <input type="text" style="margin-left: 55px; width: auto;" placeholder="Example Cafe">
+                <br><label for="">Your email</label>
+                <input type="text" style="margin-left: 2px;">
+                <br><label for="">Message:</label>
+                <input type="text" style="height: 150px; width: 400px; margin: 10px;">
+                <br><label for="">Attack File</label>
+                <input type="button" value="Choose File"> No file choosen
+            </form>
+        </div>
+        <div class="section">
+            <div class="message">How you found us:</div>
+            <form action="">
+                <label for="">How did you hear of us</label>
+                <select name="" id="">
+                    <option value="">Google</option>
+                    <option value="">Bing</option>
+                    <option value="">Chomre</option>
+                </select>
+                <br><label for="">Newsletter</label>
+                <input type="checkbox" style="margin-left: 80px;"> <label for="">Ensure this box is checked if you would like to receive email update</label>
+                <br>
+                <div class="footer">
+                    <form action="">
+                        <input type="submit" value="Send Message">
+                    </form>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

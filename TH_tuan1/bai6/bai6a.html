@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .main {
+        height: 750px;
+        width: 55%;
+        margin: 0px auto;
+        background-color: lightskyblue;
+    }
+
+    .logo {
+        height: 13%;
+        width: 40%;
+        background-color: aqua;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin: auto;
+        text-align: center;
+        padding: auto;
+    }
+
+    .logo>h2 {
+        font-family: fantasy;
+    }
+
+    form>input,
+    select {
+        margin-bottom: 10px;
+    }
+
+    .name {
+        margin: 0px 50px;
+    }
+
+    .footer {
+        margin: 20px 0px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="logo">
+            <h2>Jackson</h2>
+            <hr style="border: 3px solid black;">
+            <h2>Electronics</h2>
+        </div>
+        <div>
+            <br>
+            <h2 style="text-align: center;">Registration Form</h2>
+            <br>
+            <p style="text-align: center; margin-bottom: 10px;">Register your Jackson Electronics product here</p>
+        </div>
+        <div class="name">
+            <form action="">
+                <label for="f1 ">First Name:</label>
+                <input type="text " name="f1 " id="f1 " style="margin-left: 80px; width: 150px;"
+                    placeholder="nhập vào đây ">
+                <label for="l1 ">Last Name:</label>
+                <input type="text " name="l1 " id="l1 " style="margin: 0px 5px; width: 150px;"
+                    placeholder="Nhập vào đây ">
+                <br>
+                <label for="ad1 ">Address #1:</label>
+                <input type="text " name="ad1 " id="ad1 " style="margin-left: 80px; width: 250px; "
+                    placeholder="Nhập vào đây ">
+                <br><label for="ad2 ">Address #2:</label>
+                <input type="text " name="ad2 " id="ad2 " style="margin-left: 80px; width: 250px; "
+                    placeholder="Nhập vào đây ">
+                <br>
+                <label for="ct ">City:</label>
+                <input type="text " name="ct " id="name " style="margin-left: 124px; width: 190px; "
+                    placeholder="Nhập vào đây ">
+                <label for="st ">State:</label>
+                <input type="text " name="st " id="st " style="margin: 0px 5px; width: 40px; ">
+                <label for="Zip ">Zip:</label>
+                <input type="text " name="Zip " id="Zip " style="margin: 0px 5px;width: 80px; ">
+                <br>
+                <label for="Country">Country:</label>
+                <input type="text" name="Country" id="Country" value="United States"
+                    style="margin-left: 99px; width:190px ;">
+                <hr>
+                <br><label for="Pd">Product:</label>
+                <select name="Pd" id="Pd" style="margin-left: 102px; width: 150px;">
+                    <option value="">ScanMaster</option>
+                    <option value="">sdgdsg</option>
+                    <option value="">ewtwet</option>
+                </select>
+                <br>
+                <label for="">Date Purchased:</label>
+                <input type="text" name="" id="" style="margin-left: 51px; width: 180px;">
+                <br><label for="">Serial #:</label>
+                <input type="text" name="" id="" style="margin-left: 102px; width: 180px;">
+                <br><label for="">Used for:</label>
+                <input type="radio" name="" id="" style="margin-left: 92px;">
+                <label for="">Home</label>
+                <input type="radio" name="" id="" style="margin-left: 72px;">
+                <label for="">Educational Institution</label>
+                <br><input type="radio" name="" id="" style="margin-left: 155px;">
+                <label for="">Business</label>
+                <input type="radio" name="" id="" style="margin-left: 55px;">
+                <label for="">Other</label>
+                <br><input type="radio" name="" id="" style="margin-left: 155px;">
+                <label for="">Goverment</label>
+                <br>
+                <label for="">System (check all that apply):</label>
+                <input type="checkbox" name="" id="">
+                <label for="">Windows</label>
+                <input type="checkbox" name="" id="" style="margin-left: 80px;">
+                <label for="">UNIX</label>
+                <br><input type="checkbox" name="" id="" style="margin-left: 195px;">
+                <label for="">Macintosh</label>
+                <input type="checkbox" name="" id="" style="margin-left: 73px;">
+                <label for="">Other</label>
+                </hr>
+                <hr>
+                <div class="footer">
+                    <label for="">Comments?:</label>
+                    <input type="text" name="" id="" style="margin-left: 65px; height: 100px; width: 70%;">
+                    <div class="button-group">
+                        <input type="button" name="register" id="register" value="Click to register">
+                        <input type="button" name="cancel" id="cancel" value="Click to cancel">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
