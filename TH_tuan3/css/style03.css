@@ -6,7 +6,7 @@
 
 .wrapper {
     height: 900px;
-    width: 1200px;
+    width: 1089px;
     border: 1px solid black;
     font-size: 20px;
 }
@@ -19,6 +19,7 @@
     line-height: 50px;
     text-shadow: 3px -3px 3px white;
     border-bottom: 1px solid black;
+    text-align: left;
 }
 
 .header p {
@@ -102,7 +103,7 @@ form button {
     
     background-color: #768e3c;
     font-size: 20px;
-
+    
     border: 1px solid #a6813c;
 }
 

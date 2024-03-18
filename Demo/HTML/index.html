@@ -1,76 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
-    <title>F8 HTML</title>
-    <link rel="stylesheet" href="/Demo/CSS/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/handle.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnModal").click(function(){
+                $("#myModal").modal();
+            })
+        })
+    </script>
+    <style>
+        nav li{
+            margin-right: 120px;
+        }
+    </style>
 </head>
-
 <body>
-    <h1 id="Tittle">
-        World Bank hủy tài trợ ở Nha Trang, nhiều hệ lụy
-    </h1>
-    <p>
-        Việc Khánh Hòa bị hủy tài trợ hơn 10 triệu USD xây dựng kè, đường hai bên
-        sông Cái Nha Trang có liên quan đến việc bồi thường cho dân bị ảnh hưởng
-        từ dự án không đúng chính sách của World Bank.
-    </p>
-    <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1h0IRC.img?w=1920&h=1080&q=60&m=2&f=jpg"
-        alt="Ảnh Nha Trang" />
-    <a href="https://tuoitre.vn/world-bank-huy-tai-tro-o-nha-trang-nhieu-he-luy-20240120221620482.htm">Tới trang báo
-        gốc</a>
-    <ul>
-        <li>Hậu quả bồi thường cho dân không đúng chính sách World Bank</li>
-        <li>Bảo vệ cho người bị ảnh hưởng từ dự án do World Bank tài trợ</li>
-        <li>Bảo vệ về đất ở cho người bị ảnh hưởng bởi dự án</li>
-        <li>Bình luận</li>
-    </ul>
-
-    <table>
-        <thead>
-            <th>STT</th>
-            <th>Ten</th>
-            <th>Comment</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Trần Công Minh</td>
-                <td>Đền bù ncc</td>
-                <td><input name="checkbox" type="checkbox" /></td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>Kyung Minn</td>
-                <td>Khỏi đền bù ncc</td>
-                <td><input name="checkbox" type="checkbox" /></td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>TCMinh</td>
-                <td>Đền bù gấp đôi</td>
-                <td><input name="checkbox" type="checkbox" /></td>
-            </tr>
-            <th>
-                <input name="chon Comment" type="radio" />
-            </th>
-            <th>
-                <input name="chon Comment" type="radio" />
-            </th>
-            <th>
-                <input name="chon Comment" type="radio" />
-            </th>
-        </tbody>
-    </table>
-
-    <p>Viết Comment:</p>
-    <input type="text" />
-
-    <button type="button">Đăng</button>
+    <div class="container">
+        <div>
+            <img src="../image/banner-5.png" style="width: 100%;">
+        </div>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-bs-toggle="modal" href="#" data-bs-target="#myModal">Register</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                </div>
+            </div>
+        </nav>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-stripped">
+                    <th>STT</th>
+                    <th>Mã học viên</th>
+                    <th>Họ tên</th>
+                    <th>Địa chỉ</th>
+                    <th>Tên dịch vụ</th>
+                    <th>Tiền đồ dùng</th>
+                    <th>Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>123456789</td>
+                    <td>Trần Anh</td>
+                    <td>Quãng Ngãi</td>
+                    <td>30000</td>
+                    <td>100000</td>
+                    <td>70000</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">THÔNG TIN THANH TOÁN</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6 col-sm-3 mb-4">
+                                    <label for="">Mã học viên:</label>
+                                </div>
+                                <div class="col-6 col-sm-9 mb-4">
+                                    <input type="text" id="maHvTxt" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-sm-3 mb-4">
+                                    <label for="">Họ tên:</label>
+                                </div>
+                                <div class="col-6 col-sm-9 mb-4">
+                                    <input type="text" id="tenHvTxt" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-sm-3 mb-4">
+                                    <label for="">Địa chỉ:</label>
+                                </div>
+                                <div class="col-6 col-sm-9 mb-4">
+                                    <input type="text" id="d/cTxt" class="form-control">
+                                </div>
+                                <div>
+                                    <span id = "checkDC">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-sm-3 mb-4">
+                                    <label for="">Dịch vụ:</label>
+                                </div>
+                                <div class="col-6 col-sm-9 mb-4">
+                                    <select name="" id="lsGia" class="form-control">
+                                        <option value="20000">Bơi</option>
+                                        <option value="30000">Game</option>
+                                        <option value="50000">Nước</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 col-sm-3 mb-4">
+                                        <label for="">Giá:</label>
+                                    </div>
+                                    <div class="col-6 col-sm-9 mb-4">
+                                        <input type="text" id="giaTxt" class="form-control" disabled>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-4 col-sm-3 mb-4">
+                                        <label for="">Đồ dùng:</label>
+                                    </div>
+                                    <div class="col-8 col-sm-9 mb-4">
+                                        <div><input type="checkbox" name="" id="">Áo quần bơi</div>
+                                        <div><input type="checkbox" name="" id="">Phao</div>
+                                        <div><input type="checkbox" name="" id="">Kính bơi</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 col-sm-3 mb-4">
+                                        <label for="">Thành tiền:</label>
+                                    </div>
+                                    <div class="col-6 col-sm-9 mb-4">
+                                        <input type="text" id="thanhTienTxt" class="form-control" disabled>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 col-sm-3 mb-4">Giảm trừ:</div>
+                                    <div class="col-8 col-sm-9">
+                                        <input type="radio" name="kmBut" id="">Ngày thường (giảm 7000)
+                                        <br>
+                                        <input type="radio" name="kmBut">Cuối tuần (giảm 1000)
+                                    </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-4 col-sm-3 mb-4">Tổng tiền:</div>
+                                    <div class="col-8 col-sm-9"><input type="text" class="form-control" name="" id="" disabled></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="col btn btn-secondary btn-success" data-bs-dismiss="modal">Submit</button>
+                            <button type="button" class="col btn btn-primary btn-danger">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>

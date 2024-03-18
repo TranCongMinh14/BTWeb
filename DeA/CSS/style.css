@@ -1,0 +1,162 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 960px;
+    height: 890px;
+    border: 1px solid black;
+    margin-top: 40px;
+}
+
+nav {
+    width: 100%;
+    height: 70px;
+    background-color: #a9050c;
+}
+
+header {
+    width: 100%;
+    height: 355px;
+}
+
+section {
+    float: left;
+    width: 65%;
+    height: 355px;
+}
+
+aside {
+    float: left;
+    width: 35%;
+    height: 355px;
+}
+
+footer {
+    clear: both;
+    width: 100%;
+    height: 110px;
+    border-top: 1px solid black;
+    background-color: #a9050c;
+    color: white;
+}
+
+.menu {
+    width: 100%;
+    padding-top: 25px;
+    padding-left: 10px;
+}
+
+.menu ul li {
+    display: inline;
+    a {
+        color: white;
+        text-decoration: none;
+        padding-right: 20px;
+        font: caption;
+    }
+    a:hover {
+        color: yellow;
+    }
+}
+
+.end-title {
+    text-align: center;
+    font: caption;
+    margin-top: 20px;
+}
+
+.section-title {
+    width: 60%;
+    height: 10%;
+    color: #a9050c;
+    font: caption;
+    border-bottom: 2px solid rgb(233, 180, 81);
+    float: left;
+    h3 {
+        margin-top: 10px;
+    }
+}
+
+.section-text {
+    clear: both;
+    width: 100%;
+    height: 90%;
+    p {
+        font-size: 13px;
+    }
+}
+
+.img-noidung-chinh {
+    width: 500px;
+    padding-right: 20px;
+}
+
+.noidung-chinh {
+    font-size: 13px;
+    margin-top: 20px;
+    display: flex;
+    width: 70%;
+    float: left;
+}
+
+.noidung-2 {
+    clear: both;
+}
+
+.rank {
+    width: 100%;
+    height: 37%;
+    color: white;
+    p {
+        letter-spacing: 1px;
+        font-size: 13px;
+        padding-left: 15px;
+        width: 100%;
+        padding-top: 15px;
+        background-color: #a9050c;
+        margin-bottom: 3px;
+        padding-bottom: 5px;
+    }
+}
+
+.title-form {
+    color: #a9050c;
+    border-bottom: 4px solid rgb(233, 180, 81);
+    margin-bottom: 10px;
+    font: caption;
+    padding-left: 10px;
+}
+
+.form-dien {
+    width: 100%;
+    height: 190px;
+    background-color: #eff0f2;
+    border-radius: 4px;
+    input {
+        width: 95%;
+        height: 30px;
+        border-radius: 4px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.search-advanced {
+    display: flex;
+    margin-top: 40px;
+    p {
+        margin-left: 0;
+        color: blue;
+    }
+    button {
+        width: 30%;
+        height: 30px;
+        border: none;
+        background-color: #a9050c;
+        border-radius: 3px;
+        color: white;
+    }
+}
