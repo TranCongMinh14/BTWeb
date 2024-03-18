@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px auto;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            height: 800px;
+            width: 1089px;
+            background-color: antiquewhite;
+            border: 1px solid royalblue;
+            position: relative;
+        }
+
+        header {
+            height: 150px;
+            width: 1089px;
+            background-color: rgb(101, 192, 128);
+            border: 1px solid royalblue;
+        }
+
+        header p {
+            position: absolute;
+            top: 25px;
+            left: 150px;
+            font-size: 40px;
+            text-shadow: rgb(27, 19, 249) 15px 20px 5px;
+            color: seashell;
+
+        }
+
+        header:hover>p {
+            color: yellowgreen;
+        }
+
+        nav {
+
+            height: 50px;
+            width: 100%;
+            background-color: rgb(166, 114, 45);
+            border: 1px solid royalblue;
+        }
+
+        .menu {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu li {
+            width: 100%;
+            height: 50px;
+            background-color: wheat;
+            line-height: 50px;
+            text-indent: 10px;
+            list-style: none;
+            position: relative;
+        }
+
+        /* .menu li:hover {
+            background-color: cadetblue;
+            border: 1px solid slateblue;
+        } */
+
+        li a {
+            text-decoration: none;
+            color: green;
+        }
+
+        li:hover>a {
+            color: darkred;
+            font-weight: bold;
+        }
+
+        /* .menu li .sub-menu {
+            display: none;
+            position: absolute;
+        }
+
+        li:hover>.sub-menu {
+            display: block
+        }
+
+        .menu li .sub-menu li .sub-menu2 {
+            display: none;
+            position: absolute;
+        }
+
+        .menu li .sub-menu li:hover>.sub-menu2 {
+            display: block;
+            top: 0;
+            left: 150px;
+
+        } */
+
+        .content {
+            height: 450px;
+            width: 1089px;
+            background-color: rgb(121, 185, 223);
+            border: 1px solid royalblue;
+        }
+
+        aside {
+            height: 450px;
+            width: 40%;
+            background-color: rgb(198, 142, 222);
+            border: 1px solid royalblue;
+            float: left;
+            box-sizing: border-box;
+        }
+
+        section {
+            height: 450px;
+            width: 60%;
+            background-color: rgb(121, 223, 136);
+            border: 1px solid royalblue;
+            float: right;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            height: 150px;
+            width: 1089px;
+            background-color: rgb(41, 78, 18);
+            border: 1px solid royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="../img/anhmang.jpeg" alt="" height="150" width="1089">
+            <p>GAME NHÁI LIÊN QUÂN</p>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">GAME TAG</a></li>
+                <li><a href="#">ABOUT</a>
+                    <!-- <ul class="sub-menu">
+                        <li><a href="#1">Game 1</a></li>
+                        <li><a href="#2">Game 2</a>
+                            <ul class="sub-menu2">
+                                <li><a href="#2.1">Game 2.1</a></li>
+                                <li><a href="#2.2">Game 2.2</a></li>
+                                <li><a href="#2.3">Game 2.3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#3">Game 3</a></li>
+                    </ul> -->
+                </li>
+                <li><a href="#">HELP</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <aside></aside>
+            <section></section>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+
+</html>
