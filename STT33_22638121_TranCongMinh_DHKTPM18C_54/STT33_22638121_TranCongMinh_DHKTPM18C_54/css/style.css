@@ -1,0 +1,134 @@
+* {
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 900px;
+    height: 900px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(189, 218, 208);
+}
+
+nav {
+    width: 900px;
+    height: 50px;
+    background-color: #FBF2E9;
+    position: absolute;
+    padding-top: 10px;
+    li {
+        display: block;
+        float: left;
+        list-style: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        color: #0f0a0a;
+        text-decoration: none;
+        margin-left: 50px;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    li:hover {
+        background-color: #fff;
+        color: #fc9f9f;
+    }
+    .home {
+        font-size: 20px;
+        color: #fff;
+        float: left;
+        margin-left: 10px;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+    }
+    .search {
+        float: left;
+        right: 100px;
+        margin-top: 20px;
+        margin-left: 80px;
+        text-align: center;
+    }
+    img {
+        float: right;
+        margin-top: 0px;
+    }
+}
+
+.content {
+    width: 900px;
+    height: 800px;
+    background-color:#FBF2E9;
+    position: relative;
+    top: 50px;
+}
+
+.center {
+    width: 120px;
+    height: 120px;
+    line-height: 100px;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    
+    
+}
+
+section {
+    width: 50%;
+    height: 950px;
+    background-color: #FBF2E9;
+    float: left;
+    img {
+        width: 100%;
+        height: 40%;
+        
+    }
+    img:hover {
+        transform: rotate(30deg);
+    }
+    h1{
+        margin-left: 50px;
+        margin-top: 20%;
+    }
+}
+
+aside {
+    width: 50%;
+    height: 950px;
+    background-color: #FBF2E9;
+    float: left;
+    img {
+        width: 100%;
+        height: 50%;
+       margin-top: 5px;
+    }
+    .text-right {
+       width: 100%;
+       height: 30% ;
+        margin-top: 30%;
+       
+    }
+}
+
+footer {
+    clear: both;
+    width: 100%;
+    height: 150px;
+    background-color: #FBF2E9;
+    position: relative;
+
+    table td{
+        padding: 30px;
+    }
+    table{
+        margin-left: 10px;
+    }
+}
