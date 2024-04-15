@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm</title>
+    <link rel="shortcut icon" href="../img//Logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/format.css" />
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <img src="../img/Banner/bannenowfree.jpg" alt="header-banner" class="header-banner">
+                </div>
+            </div>
+            <div class="row"> <!-- Di chuyển dòng này lên đây -->
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <a class="navbar-brand" href="index.html"><img src="../img//Logo/logo-nobackgroud.jpg" alt=""
+                            class="logo" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html"><i class="fa-solid fa-house"
+                                        style="color: rgba(31,81,37,255);"></i> Trang chủ <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item  mx-3">
+                                <a class="nav-link" href="gioithieu.html"><i class="fa-solid fa-envelope"
+                                        style="color: rgba(31,81,37,255);"></i> Giới thiệu</a>
+                            </li>
+                            <li class="nav-item  mx-3">
+                                <a class="nav-link" href="sitemap.html"><i class="fa-solid fa-location-dot"
+                                        style="color: rgba(31,81,37,255);"></i> Site map</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="tintuc.html"><i class="fa-solid fa-scroll"
+                                        style="color: rgba(31,81,37,255);"></i> Tin tức</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="sanpham.html"><i class="fa-solid fa-truck"
+                                        style="color: rgba(31,81,37,255);"></i> Sản phẩm</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <!-- Tài khoản dropdown -->
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownAccount"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa-solid fa-circle-user" style="color: rgba(31,81,37,255);"></i>
+                                        Tài
+                                        khoản
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownAccount">
+                                        <a class="dropdown-item" href="../html/dangnhap.html">Đăng nhập</a>
+                                        <a class="dropdown-item" href="../html/dangky.html">Đăng ký</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="gioHang.html"><i class="fa-solid fa-cart-shopping"
+                                        style="color: rgba(31,81,37,255);"></i>Giỏ hàng </a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-n5" type="search" placeholder="Tìm kiếm sản phẩm ..."
+                                aria-label="Search" id="searchBar" style="width: 300px;" />
+                            <button class="btn btn-outline-success my-2 mx-sm-5" type="button" id="btnSearchBar">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <div class="row"> <!-- Thêm dòng này vào cuối cùng của header -->
+                <div class="header-line"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Chi tiết sản phẩm -->
+    <section>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 id="detail-title">
+                        [PHIÊN BẢN V6 SIREN HOLIDAY] Son Kem Lì, Bền Màu, Lâu Trôi Merzy The First
+                        Velvet Tint 4.5g
+                    </h2>
+                    <hr />
+                </div>
+            </div>
+
+            <!-- Thông tin chi tiết -->
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../img/ChiTietProducts/sp1_1024x1024.png" alt="son1" width="100%" id="img_p" />
+                </div>
+                <div class="col-md-6" style="border-left: 10px white solid;">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Mã sản phẩm:</td>
+                                <td class="maSP">MZ100001</td>
+                            </tr>
+                            <tr>
+                                <td>Giá bán:</td>
+                                <td><del id="giaBan">299.000đ</del></td>
+                            </tr>
+                            <tr>
+                                <td>Giá khuyến mãi</td>
+                                <td>
+                                    <span style="color: red" id="giaKhuyenMai">159.000đ</span>
+                                    (Đã bao gồm VAT)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Thương hiệu</td>
+                                <td id="thuongHieu">Merzy</td>
+                            </tr>
+                            <tr>
+                                <td>Loại</td>
+                                <td id="loaiSP">V6 SIREN HOLIDAY</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button class="btn btn-outline-dark btn-block btn-group-toggle" type="button"
+                                        id="btnThemGioHang">
+                                        Thêm vào giỏ hàng
+                                    </button>
+                                    <button class="btn btn-danger btn-block btn-group-toggle" type="button"
+                                        id="btnMuaNgay">
+                                        Mua ngay
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- Thông số sản phẩm-->
+            <div class="row mt-md-4">
+                <div class="col-md-12">
+                    <table class="table table-hover table-light table-sm">
+                        <thead class="thead-light">
+                            <th colspan="2">
+                                <h3>Thông số sản phẩm</h3>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Barcode:</td>
+                                <td id="barCode">6902395841241</td>
+                            </tr>
+                            <tr>
+                                <td>Nhãn Hiệu:</td>
+                                <td id="nhanHieu">Merzy</td>
+                            </tr>
+                            <tr>
+                                <td>Xuất xứ thương hiệu:</td>
+                                <td id="xuatXu">Hàn Quốc</td>
+                            </tr>
+                            <tr>
+                                <td>Nơi sản xuất:</td>
+                                <td id="noiSX">Korea</td>
+                            </tr>
+                            <tr>
+                                <td>Dung tích:</td>
+                                <td id="dungTich">4.5g</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Hạn sử dụng:
+                                </td>
+                                <td id="hsd">
+                                    3 năm kể từ ngày sản xuất/NSX xem trên bao bì (6 tháng sau khi mở nắp)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" id="note">***Màu sắc có thể khác nhau tùy thuộc vào ánh sáng, độ phân
+                                    giải màn
+                                    hình và sắc tố da.</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gửi phản hồi -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h3>Đánh giá & nhận xét</h3>
+                        <form action="">
+                            <div class="form-group">
+                                <textarea id="my-textarea" class="form-control" name="question" rows="3"
+                                    placeholder="Xin mời để lại câu hỏi. Câu hỏi sẽ được trả lời trong vòng 1h, các câu hỏi sau 22h sẽ được trả lời vào sáng hôm sau."></textarea>
+                                <button type="button" class="btn btn-primary mt-3" id="btnGui">
+                                    Gửi
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="badge-dark text-md-center text-white mt-5">
+        <div class="container">
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1"
+                        href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1"
+                        href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://mail.google.com/" role="button"><i
+                            class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/t.c.minh.14/"
+                        role="button"><i class="fab fa-instagram"></i></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/TranCongMinh14"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Form -->
+                <section class="">
+                    <form action="dangky.html">
+                        <!--Grid row-->
+                        <div class="row d-flex justify-content-center">
+                            <!--Grid column-->
+                            <div class="col-md-4 col-4">
+                                <p class="pt-2 font-weight-bold">
+                                    Sign up for our newsletter
+                                </p>
+                            </div>
+                            <!--Grid column-->
+                            <!--Grid column-->
+                            <div class="col-md-4 col-4">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example21" class="form-control" />
+                                    <label class="form-label" for="form5Example21">Email address</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-4 col-4">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </form>
+                </section>
+                <!-- Section: Form -->
+                <!-- Section: Links -->
+                <section class="">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Danh mục</h5>
+                            <ul class="list-unstyled mb-0 ">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./index.html">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./tintuc.html">Tin tức</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./dangky.html">Đăng ký</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./dangnhap.html">Đăng nhập</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./gioHang.html">Giỏ hàng</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Hỗ trợ khách hàng</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Hướng dẫn mua hàng trực tuyến </a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Hướng dẫn thanh toán</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Gửi yêu cầu khiếu nại</a>
+                                </li>
+                                <li><a href="#!" class="text-white">Câu hỏi thường gặp (FAQs)</a></li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Chính sách</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách quy định chung</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách bảo mật</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách vận chuyển & giao nhận</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách đổi trả</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Thông tin khuyến mãi</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Sản phẩm nổi bật</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Sản phẩm mới</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Sản phẩm bán chạy</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Tạp chí làm đẹp</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+
+                    </div>
+                    <!--Grid row-->
+                </section>
+                <!-- Section: Links -->
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <p>
+                            <span class="font-weight-bold">Họ tên - MSSV:</span>
+                            Trần Công Minh - 22638121
+                        </p>
+                        <p>
+                            <span class="font-weight-bold">Lớp học:</span> DHKTPM18B
+                        </p>
+                        <p>
+                            <span class="font-weight-bold">Điện thoại:</span> 0123456789 -
+                            <span class="font-weight-bold">Email:</span>
+                            tcminhangiang@gmail.com -
+                        </p>
+                        <p><span class="font-weight-bold">Copyright © hasaki.vn thegioiskhinfood – All rights
+                                reserved:</span></p>
+
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            // Gửi phản hồi
+            $("#btnGui").click(function () {
+                alert(
+                    "Phản hồi của bạn đã được gửi. Chúng tôi sẽ phản hồi sớm nhất có thể."
+                );
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            let stt;
+            stt = eval(localStorage.getItem("sttGH"));
+            if (localStorage.getItem("carts").length == 2) {
+                stt = 1;
+            }
+            console.log(localStorage.getItem("carts").length);
+            $("#btnThemGioHang").click(function () {
+                alert("Sản phẩm đã được thêm vào giỏ hàng.");
+                const dsCart = JSON.parse(localStorage.getItem("carts")) || [];
+                const proDuctInfor = {
+                    index: stt,
+                    name: "[PHIÊN BẢN V6 SIREN HOLIDAY] Son Kem Lì, Bền Màu, Lâu Trôi Merzy The First Velvet Tint 4.5g",
+                    img: "../img/ChiTietProducts/sp1_1024x1024.png",
+                    price: "159.000đ",
+                    quantity: 1,
+                };
+                dsCart.push(proDuctInfor);
+                localStorage.setItem("carts", JSON.stringify(dsCart));
+                console.log(dsCart);
+            });
+
+            $("#btnMuaNgay").click(function () {
+                window.location.href = "../html/gioHang.html"; // Chuyển hướng đến trang giỏ hàng
+                const dsCart = JSON.parse(localStorage.getItem("carts")) || []; // Lấy danh sách giỏ hàng từ localStorage, hoặc tạo mới nếu không tồn tại
+                const proDuctInfor = {
+                    index: stt,
+                    name: "[PHIÊN BẢN V6 SIREN HOLIDAY] Son Kem Lì, Bền Màu, Lâu Trôi Merzy The First Velvet Tint 4.5g",
+                    img: "../img/ChiTietProducts/sp1_1024x1024.png",
+                    price: "159.000đ",
+                    quantity: 1,
+                };
+                dsCart.push(proDuctInfor); // Thêm sản phẩm vào giỏ hàng
+                localStorage.setItem("carts", JSON.stringify(dsCart)); // Lưu giỏ hàng vào localStorage
+                localStorage.setItem("sttGH", ++stt); // Cập nhật chỉ số sản phẩm trong giỏ hàng và lưu vào localStorage
+                console.log(dsCart);
+
+            });
+        });
+    </script>
+</body>
+
+</html>

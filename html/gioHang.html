@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ hàng</title>
+    <link rel="shortcut icon" href="../img//Logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/format.css" />
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/data.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <img src="../img/Banner/bannenowfree.jpg" alt="header-banner" class="header-banner">
+                </div>
+            </div>
+            <div class="row"> <!-- Di chuyển dòng này lên đây -->
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <a class="navbar-brand" href="index.html"><img src="../img//Logo/logo-nobackgroud.jpg" alt=""
+                            class="logo" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html"><i class="fa-solid fa-house"
+                                        style="color: rgba(31,81,37,255);"></i> Trang chủ <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item  mx-3">
+                                <a class="nav-link" href="gioithieu.html"><i class="fa-solid fa-envelope"
+                                        style="color: rgba(31,81,37,255);"></i> Giới thiệu</a>
+                            </li>
+                            <li class="nav-item  mx-3">
+                                <a class="nav-link" href="sitemap.html"><i class="fa-solid fa-location-dot"
+                                        style="color: rgba(31,81,37,255);"></i> Site map</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="tintuc.html"><i class="fa-solid fa-scroll"
+                                        style="color: rgba(31,81,37,255);"></i> Tin tức</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="sanpham.html"><i class="fa-solid fa-truck"
+                                        style="color: rgba(31,81,37,255);"></i> Sản phẩm</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <!-- Tài khoản dropdown -->
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownAccount"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa-solid fa-circle-user" style="color: rgba(31,81,37,255);"></i>
+                                        Tài
+                                        khoản
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownAccount">
+                                        <a class="dropdown-item" href="../html/dangnhap.html">Đăng nhập</a>
+                                        <a class="dropdown-item" href="../html/dangky.html">Đăng ký</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="gioHang.html"><i class="fa-solid fa-cart-shopping"
+                                        style="color: rgba(31,81,37,255);"></i>Giỏ hàng </a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-n5" type="search" placeholder="Tìm kiếm sản phẩm ..."
+                                aria-label="Search" id="searchBar" style="width: 300px;" />
+                            <button class="btn btn-outline-success my-2 mx-sm-5" type="button" id="btnSearchBar">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <div class="row"> <!-- Thêm dòng này vào cuối cùng của header -->
+                <div class="header-line"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Giỏ hàng của bạn</h1>
+        <div class="row">
+            <div class="col-md-8" id="listGioHang"></div>
+            <div class="col-md-4">
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Thanh toán</h4>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>Thành tiền:</p>
+                            </div>
+                            <div class="col-6">
+                                <h5 id="tienThanhToan">0 đ</h5>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-success btn-block mt-3" id="btnThanhToan">
+                            Thanh toán <i class="fa-solid fa-cart-shopping" style="color: #154134;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="badge-dark text-md-center text-white mt-5">
+        <div class="container">
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1"
+                        href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1"
+                        href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://mail.google.com/" role="button"><i
+                            class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/t.c.minh.14/"
+                        role="button"><i class="fab fa-instagram"></i></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/TranCongMinh14"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Form -->
+                <section class="">
+                    <form action="dangky.html">
+                        <!--Grid row-->
+                        <div class="row d-flex justify-content-center">
+                            <!--Grid column-->
+                            <div class="col-md-4 col-4">
+                                <p class="pt-2 font-weight-bold">
+                                    Sign up for our newsletter
+                                </p>
+                            </div>
+                            <!--Grid column-->
+                            <!--Grid column-->
+                            <div class="col-md-4 col-4">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example21" class="form-control" />
+                                    <label class="form-label" for="form5Example21">Email address</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-4 col-4">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </form>
+                </section>
+                <!-- Section: Form -->
+                <!-- Section: Links -->
+                <section class="">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Danh mục</h5>
+                            <ul class="list-unstyled mb-0 ">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./index.html">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./tintuc.html">Tin tức</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./dangky.html">Đăng ký</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./dangnhap.html">Đăng nhập</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./gioHang.html">Giỏ hàng</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Hỗ trợ khách hàng</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Hướng dẫn mua hàng trực tuyến </a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Hướng dẫn thanh toán</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Gửi yêu cầu khiếu nại</a>
+                                </li>
+                                <li><a href="#!" class="text-white">Câu hỏi thường gặp (FAQs)</a></li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Chính sách</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách quy định chung</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách bảo mật</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách vận chuyển & giao nhận</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Chính sách đổi trả</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                            <h5 class="font-weight-bold text-uppercase">Thông tin khuyến mãi</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Sản phẩm nổi bật</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Sản phẩm mới</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Sản phẩm bán chạy</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Tạp chí làm đẹp</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+
+                    </div>
+                    <!--Grid row-->
+                </section>
+                <!-- Section: Links -->
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <p>
+                            <span class="font-weight-bold">Họ tên - MSSV:</span>
+                            Trần Công Minh - 22638121
+                        </p>
+                        <p>
+                            <span class="font-weight-bold">Lớp học:</span> DHKTPM18B
+                        </p>
+                        <p>
+                            <span class="font-weight-bold">Điện thoại:</span> 0123456789 -
+                            <span class="font-weight-bold">Email:</span>
+                            tcminhangiang@gmail.com -
+                        </p>
+                        <p><span class="font-weight-bold">Copyright © hasaki.vn thegioiskhinfood – All rights
+                                reserved:</span></p>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Hiển thị giỏ hàng
+            function showCart() {
+                const cartElement = document.getElementById("listGioHang"); // Lấy phần tử hiển thị giỏ hàng
+
+                // Lấy danh sách sản phẩm từ localStorage
+                const cartItems = JSON.parse(localStorage.getItem("carts"));
+
+                if (cartItems && cartItems.length > 0) {
+                    // Nếu giỏ hàng không trống
+                    const html = cartItems.map((item) => {
+                        let totalPrice = parseInt(item.price.replace(/\./g, "").replace("đ", "")) * item.quantity;
+                        const formatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' });
+                        let formattedTotalPrice = formatter.format(totalPrice);
+                        return `
+          <div class="card mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">${item.name}</h5>
+                  <img src="${item.img}" alt="" width="100"/>
+                  <!-- Thêm phần số lượng -->
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Số lượng</div>
+                    </div >
+                    <input
+                      type="number"
+                      class="form-control col-3 soLuongSP"
+                      min="1"
+                      max="100"
+                      value="${item.quantity}"
+                      data-index="${item.index}"
+                      
+                    />
+                  </div>
+                  <p class="card-text">${item.price}</p>
+                  <!-- Tổng tiền -->
+                  
+                  <p class="card-text text-danger" id="tongTien">
+                    Tổng tiền: ${formattedTotalPrice} 
+                  </p>
+                </div>
+                <div class="col-6">
+                  <button type="button" class="btn btn-outline-danger float-right btnXoaSP">Xóa sản phẩm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+                    `;
+                    });
+                    // Hiển thị danh sách sản phẩm trong giỏ hàng
+                    cartElement.innerHTML = html.join("\n");
+                } else {
+                    // Nếu giỏ hàng trống
+                    cartElement.innerHTML = `<h3>Chưa có sản phẩm nào!</h3> <a href="index.html">Mua ngay</a> `;
+                }
+
+                // Bắt sự kiện xóa sản phẩm khỏi giỏ hàng
+                const deleteButtons = document.querySelectorAll(".btnXoaSP");
+                deleteButtons.forEach((button, index) => {
+                    button.addEventListener("click", () => {
+                        cartItems.splice(index, 1); // Xóa sản phẩm khỏi danh sách
+                        localStorage.setItem("carts", JSON.stringify(cartItems)); // Cập nhật lại localStorage
+                        showCart(); // Hiển thị lại giỏ hàng
+                    });
+                });
+
+                // Bắt sự kiện thay đổi số lượng sản phẩm
+                const quantityInputs = document.querySelectorAll(".soLuongSP");
+                quantityInputs.forEach((input) => {
+                    input.addEventListener("change", (event) => {
+                        const index = parseInt(event.target.getAttribute("data-index")); // Lấy chỉ số của sản phẩm
+                        const newQuantity = parseInt(event.target.value); // Lấy số lượng mới
+                        cartItems[index - 1].quantity = newQuantity; // Cập nhật số lượng mới vào danh sách sản phẩm
+                        localStorage.setItem("carts", JSON.stringify(cartItems)); // Cập nhật lại localStorage
+                        showCart(); // Hiển thị lại giỏ hàng để cập nhật tổng tiền
+                    });
+                });
+
+                //Tính tổng tiền các sản phẩm trong giỏ hàng
+                let totalPrice = cartItems.reduce((total, item) => {
+                    return total + (parseInt(item.price.replace(/\./g, "").replace("đ", "")) * item.quantity);
+                }, 0);
+                // Định dạng số tiền thành chuỗi theo định dạng tiền tệ và gán vào phần tử HTML
+                const formatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' });
+                document.getElementById("tienThanhToan").innerText = formatter.format(totalPrice);
+            }
+
+            showCart(); // Hiển thị giỏ hàng khi trang được load
+
+            // Thông báo cảm ơn khi thanh toán
+            $("#btnThanhToan").click(function (e) {
+                //tra đăng nhập trước khi thanh toán
+                const isLoggedIn = localStorage.getItem("isLoggedIn");
+                if (!isLoggedIn || isLoggedIn !== "true") {
+                    alert("Vui lòng đăng nhập trước khi thanh toán!");
+                    window.location.href = "./dangnhap.html";
+                    return;
+                }
+                alert("Cảm ơn bạn đã mua hàng!");
+                window.location.href ="../html/thanhtoan.html";
+                //xóa giỏ hàng
+                localStorage.removeItem("carts");
+                // Set lại tổng tiền cần thanh toán về 0
+                document.getElementById("tienThanhToan").innerText = "0 đ";
+
+                //reload giỏ hàng
+                showCart();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

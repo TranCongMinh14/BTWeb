@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm</title>
+    <link rel="shortcut icon" href="../img//Logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/format.css" />
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <img src="../img/Banner/bannenowfree.jpg" alt="header-banner" class="header-banner">
+                    </div>
+                </div>
+                <div class="row"> <!-- Di chuyển dòng này lên đây -->
+                    <nav class="navbar navbar-expand-lg navbar-light ">
+                        <a class="navbar-brand" href="index.html"><img src="../img//Logo/logo-nobackgroud.jpg" alt=""
+                                class="logo" /></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html"><i class="fa-solid fa-house"
+                                            style="color: rgba(31,81,37,255);"></i> Trang chủ <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item  mx-3">
+                                    <a class="nav-link" href="gioithieu.html"><i class="fa-solid fa-envelope"
+                                            style="color: rgba(31,81,37,255);"></i> Giới thiệu</a>
+                                </li>
+                                <li class="nav-item  mx-3">
+                                    <a class="nav-link" href="sitemap.html"><i class="fa-solid fa-location-dot"
+                                            style="color: rgba(31,81,37,255);"></i> Site map</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" href="tintuc.html"><i class="fa-solid fa-scroll"
+                                            style="color: rgba(31,81,37,255);"></i> Tin tức</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" href="sanpham.html"><i class="fa-solid fa-truck"
+                                            style="color: rgba(31,81,37,255);"></i> Sản phẩm</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <!-- Tài khoản dropdown -->
+                                    <div class="dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownAccount"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-circle-user" style="color: rgba(31,81,37,255);"></i>
+                                            Tài
+                                            khoản
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownAccount">
+                                            <a class="dropdown-item" href="../html/dangnhap.html">Đăng nhập</a>
+                                            <a class="dropdown-item" href="../html/dangky.html">Đăng ký</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" href="gioHang.html"><i class="fa-solid fa-cart-shopping"
+                                            style="color: rgba(31,81,37,255);"></i>Giỏ hàng </a>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-n5" type="search" placeholder="Tìm kiếm sản phẩm ..."
+                                    aria-label="Search" id="searchBar" style="width: 300px;" />
+                                <button class="btn btn-outline-success my-2 mx-sm-5" type="button" id="btnSearchBar">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+                <div class="row"> <!-- Thêm dòng này vào cuối cùng của header -->
+                    <div class="header-line"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Danh sách hãng -->
+        <section class="logo_hang">
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <h3 class="font-weight-bold my-md-4">THƯƠNG HIỆU NỔI BẬT</h3>
+                        <nav class="nav nav-justified logo_banner">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_1_black.webp" alt="merzy" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_2_black.webp" alt="Romand" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_3_black.webp" alt="L'oreal" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_4_black.webp" alt="Zeesea" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_5_black.webp" alt="Cocoon" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_6_black.webp" alt="Some By Mi" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_7_black.webp" alt="DHC" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><img class="logo_thuonghieu"
+                                        src="../img/Brands/home_brandlist_item_8_black.webp" alt="La Roche-Posay" /></a>
+                            </li>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Danh sách sản phẩm -->
+        <section>
+            <div class="container">
+                <div class="row my-md-4 ">
+                    <div class="col-md-12">
+                        <h3 class="font-weight-bold">Sản phẩm hot</h3>
+                    </div>
+                </div>
+
+                <div class="row mt-3 mb-3" id="JsListProduct">
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot1.webp" class="card-img-top img-thumbnail" alt="son1" />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham1.html">
+                                    <h5> [PHIÊN BẢN V6 SIREN HOLIDAY] Son Kem Lì, Bền Màu, Lâu Trôi Merzy The First
+                                        Velvet Tint 4.5g</h5>
+                                </a>
+                                <span style="color: red">159.000đ</span>
+                                <br>
+                                <span><sup><del>299.000đ</del></sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot2.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham2.html">
+                                    <h5>[NEW][COLOR GLOSS] Son Bóng Thuần Chay Cho Môi Căng Mọng, Mềm Mịn Romand
+                                        Glasting Color Gloss 4g</h5>
+                                </a>
+                                <span style="color: red">197.000đ</span>
+                                <br>
+                                <span><sup><del>207.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot3.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham.html">
+                                    <h5>[NEW][DEW4 - XANH DƯƠNG] Son Tint Bóng Dạng Thạch, Lâu Trôi Merzy The
+                                        Watery Dew Tint 4g</h5>
+                                </a>
+                                <span style="color: red">169.000đ</span>
+                                <br>
+                                <span><sup><del>299.000đ-649.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot4.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham4.html">
+                                    <h5>Nước Tẩy Trang Làm Sạch Sâu 3 In 1 L'Oreal Micellar Water Deep Cleansing</h5>
+                                </a>
+                                <span style="color: red">69.000đ</span>
+                                <br>
+                                <span><sup><del>79.000đ-269.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot5.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham5.html">
+                                    <h5>Tẩy Da Chết Body Chiết Xuất Cà Phê Dak Lak Cocoon
+                                        Dak Lak Coffee Body Polish</h5>
+                                </a>
+                                <span style="color: red">260.000đ</span>
+                                <br>
+                                <span><sup><del>325.000đ-650.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot6.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham6.html">
+                                    <h5>Bút Kẻ Mắt Nước Siêu Mảnh, Chống Thấm Nước, Lâu Trôi Zeesea Black Lasting
+                                        Eyeliner 0.5g</h5>
+                                </a>
+                                <span style="color: red">99.000đ</span>
+                                <br>
+                                <span><sup><del>119.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot7.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham7.html">
+                                    <h5>
+                                        [3 Items] Bộ Dưỡng Giảm Mụn Some By Mi Miracle Travel Kit
+                                    </h5>
+                                </a>
+                                <span style="color: red">286.000đ</span>
+                                <br>
+                                <span><sup><del>408.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot8.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham8.html">
+                                    <h5> Viên Uống Hỗ Trợ Miễn Dịch, Tăng Cường Sức Đề Kháng, Cải Thiện Da Mụn, Bổ Sung
+                                        Kẽm DHC Zinc </h5>
+                                </a>
+                                <span style="color: red">60.000đ</span>
+                                <br>
+                                <span><sup><del>65.000đ-110.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot9.webp" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham9.html">
+                                    <h5> [NEW][LIQUID GLITTER] Gel Nhũ Mắt Lấp Lánh, Bền Màu Romand The
+                                        Universe Liquid Glitter 2g </h5>
+                                </a>
+                                <span style="color: red">179.000đ</span>
+                                <br>
+                                <span><sup><del>290.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphanhot10.png" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham10.html">
+                                    <h5> Kem Lót Trang Điểm Kiềm Dầu Che Khuyết Điểm, Làm Mịn Da
+                                        Zeesea Multi-Effect Makeup Primer </h5>
+                                </a>
+                                <span style="color: red">49.000đ</span>
+                                <span><sup><del>69.000đ-159.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot11.png" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham10.html">
+                                    <h5> Serum La Roche-Posay Tinh Chất Hỗ Trợ Phục Hồi Da, Cấp Ẩm Cho Da La Roche-Posay
+                                        Hyalu B5 Serum 30ml</h5>
+                                </a>
+                                <span style="color: red">1.139.000đ</span>
+                                <span><sup><del>1.200.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12 d-flex flex-wrap">
+                        <div class="card mb-3 flex-fill">
+                            <img src="../img/Products/sanphamhot12.png" class="card-img-top img-thumbnail" alt="..." />
+                            <div class="card-body">
+                                <a class="card-title" href="chitietsanpham10.html">
+                                    <h5>Kem Chống Nắng Dạng Sữa La Roche-Posay Anthelios UVMune 400 Invisible Fluid
+                                        SPF50+</h5>
+                                </a>
+                                <span style="color: red">449.000đ</span>
+                                <span><sup><del>560.000đ</del> </sup></span>
+                                <br />
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button"
+                                    id="btnThemGioHang">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                                </button>
+                                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">
+                                    Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Giới thiệu sơ lược -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+                            <h3 class="text-success">BEAUTY COSMETICS</h3>
+                            <p>
+                                <span class="font-weight-bold">
+                                    <h5>Giới thiệu:</h5>
+                                </span>
+
+                                Beauty Cosmetics là hệ thống cửa hàng mỹ phẩm chính hãng và dịch vụ chăm sóc sắc đẹp
+                                chuyên
+                                sâu với
+                                hệ thống cửa hàng trải dài trên toàn quốc; và hiện đang là đối tác phân phối chiến lược
+                                tại
+                                thị trường Việt Nam của hàng loạt thương hiệu lớn như: La Roche-Posay, Eucerin, L'oreal,
+                                Bioderma, Klairs, Naris Cosmetics, Maybelline, Vichy, Skin1004, Cocoon, Australis,
+                                Cetaphil,
+                                Anessa, SVR, Paula's Choice, Some By Mi, B.O.M, Vaseline, Sunplay, Hada Labo, Selsun,
+                                Blossomy, Acnes, Rohto, Silky Girl, sữa rửa mặt cetaphil, Senka, Naruko, Angel's Liquid,
+                                DHC, Simple, Bio-essence, Tsubaki, 3CE, BNBG, Laneige, Vacosi, Lemonade, Hatomugi,
+                                Avène,
+                                Silcot, Neutrogena, Garnier, Mediheal, Timeless, Curél,...
+                            </p>
+
+                            <h3 class="text-success">PHƯƠNG CHÂM</h3>
+                            <p>
+                                <span class="font-weight-bold">
+                                    <h5>Phương châm:</h5>
+                                </span> Với phương châm "Chất
+                                lượng thật - Giá trị thật”, BeautyCosmetics luôn nỗ lực không ngừng nhằm nâng cao chất
+                                lượng
+                                sản phẩm & dịch vụ để khách hàng có được những trải nghiệm mua sắm tốt nhất.
+                            </p>
+
+                            <p>
+                                <span class="font-weight-bold">
+                                    <h5>Cam kết:</h5>
+                                </span>Toàn bộ sản phẩm có
+                                ở BeautyCosmetics đều được cam kết 100% chính hãng, đảm bảo nguồn gốc xuất xứ, có đầy đủ
+                                hóa
+                                đơn mua hàng VAT và tem phụ Tiếng Việt, với mức giá luôn tốt hàng đầu thị trường trong
+                                mọi
+                                thời
+                                điểm. Ngoài ra, BeautyCosmetics và nhãn hàng cam kết bảo vệ hai lớp với mức đền bù 200%
+                                nếu
+                                phát hiện hàng giả, trong đó 100% từ Hasaki và 100% từ nhà phân phối, văn phòng đại diện
+                                hãng tại
+                                Việt Nam.
+                            </p>
+
+                            <div id="demo1" class="collapse">
+                                <p>
+                                    <span class="font-weight-bold">
+                                        <h5>Chính sách:</h5>
+                                    </span>
+                                    Nhờ sự "hậu thuẫn" rất lớn từ các tập đoàn mỹ phẩm lớn mạnh, Beauty cam kết mỹ phẩm
+                                    chính
+                                    hãng & có giá bán lẻ rẻ nhất thị trường, Ở ĐÂU RẺ HƠN BEAUTY HOÀN TIỀN CHÊNH LỆCH.
+                                    Đối với mỗi đơn hàng mua sắm tại Beauty Cosmetics, khách hàng có thể yêu cầu xuất
+                                    100%
+                                    hóa đơn GTGT (hóa đơn đỏ), đảm bảo 100% nguồn hàng được bán ra tại Nuty có nguồn gốc
+                                    rõ
+                                    ràng, sản phẩm chính hãng từ các nhãn hàng.
+                                </p>
+
+                                <h3 class="text-success">
+                                    Các hãng mỹ phẩm hợp tác hàng đầu hiện nay
+                                </h3>
+                                <p>
+                                    La Roche-Posay, Eucerin, L'oreal, Bioderma, Klairs, Naris Cosmetics, Maybelline,
+                                    Vichy,
+                                    Skin1004, Cocoon, Australis, Cetaphil, Anessa, SVR, Paula's Choice, Some By Mi,
+                                    B.O.M,
+                                    Vaseline, Sunplay, Hada Labo, Selsun, Blossomy, Acnes, Rohto, Silky Girl, sữa rửa
+                                    mặt
+                                    cetaphil, Senka, Naruko, Angel's Liquid, DHC, Simple, Bio-essence, Tsubaki, 3CE,
+                                    BNBG,
+                                    Laneige, Vacosi, Lemonade, Hatomugi, Avène, Silcot, Neutrogena, Garnier, Mediheal,
+                                    Timeless, Curél,...
+                                </p>
+                                <p>
+                                    Hãy là người đầu tiên biết về các sản phẩm mới, các sự kiện đặc biệt, và
+                                    hơn
+                                    thế nữa. <a href="dangky.html"> <b>Đăng kí ngay!</b></a>
+                                </p>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo1"
+                                id="btnXemThem">
+                                Xem thêm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gửi phản hồi -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+                            <h3>Hỏi và đáp</h3>
+                            <form action="">
+                                <div class="form-group">
+                                    <textarea id="my-textarea" class="form-control" name="question" rows="3"
+                                        placeholder="Xin mời để lại câu hỏi. Câu hỏi sẽ được trả lời trong vòng 1h, các câu hỏi sau 22h sẽ được trả lời vào sáng hôm sau."></textarea>
+                                    <button type="button" class="btn btn-primary mt-3" id="btnGui">
+                                        Gửi
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="badge-dark text-md-center text-white mt-5">
+            <div class="container">
+                <div class="container p-4">
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                                class="fab fa-facebook-f"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                                class="fab fa-twitter"></i></a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://mail.google.com/"
+                            role="button"><i class="fab fa-google"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/t.c.minh.14/"
+                            role="button"><i class="fab fa-instagram"></i></a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/TranCongMinh14"
+                            role="button"><i class="fab fa-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="dangky.html">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-center">
+                                <!--Grid column-->
+                                <div class="col-md-4 col-4">
+                                    <p class="pt-2 font-weight-bold">
+                                        Sign up for our newsletter
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+                                <!--Grid column-->
+                                <div class="col-md-4 col-4">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="form5Example21" class="form-control" />
+                                        <label class="form-label" for="form5Example21">Email address</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-4 col-4">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Danh mục</h5>
+                                <ul class="list-unstyled mb-0 ">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./index.html">Trang chủ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./tintuc.html">Tin tức</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./dangky.html">Đăng ký</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./dangnhap.html">Đăng nhập</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./gioHang.html">Giỏ hàng</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Hỗ trợ khách hàng</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Hướng dẫn mua hàng trực tuyến </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Hướng dẫn thanh toán</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Gửi yêu cầu khiếu nại</a>
+                                    </li>
+                                    <li><a href="#!" class="text-white">Câu hỏi thường gặp (FAQs)</a></li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Chính sách</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách quy định chung</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách bảo mật</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách vận chuyển & giao nhận</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách đổi trả</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Thông tin khuyến mãi</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Sản phẩm nổi bật</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Sản phẩm mới</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Sản phẩm bán chạy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Tạp chí làm đẹp</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <p>
+                                <span class="font-weight-bold">Họ tên - MSSV:</span>
+                                Trần Công Minh - 22638121
+                            </p>
+                            <p>
+                                <span class="font-weight-bold">Lớp học:</span> DHKTPM18B
+                            </p>
+                            <p>
+                                <span class="font-weight-bold">Điện thoại:</span> 0123456789 -
+                                <span class="font-weight-bold">Email:</span>
+                                tcminhangiang@gmail.com -
+                            </p>
+                            <p><span class="font-weight-bold">Copyright © hasaki.vn thegioiskhinfood – All rights
+                                    reserved:</span></p>
+
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <script src="../js/data.js"></script>
+        <script src="../js/main.js"></script>
+    </div>
+</body>
+
+</html>

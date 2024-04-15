@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng kí</title>
+  <link rel="shortcut icon" href="../img//Logo/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.min.css">
+  <link rel="stylesheet" href="../css/format.css" />
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/data.js"></script>
+  <style>
+    .error-message {
+      color: red;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <img src="../img/Banner/bannenowfree.jpg" alt="header-banner" class="header-banner">
+        </div>
+      </div>
+      <div class="row"> <!-- Di chuyển dòng này lên đây -->
+        <nav class="navbar navbar-expand-lg navbar-light ">
+          <a class="navbar-brand" href="index.html"><img src="../img//Logo/logo-nobackgroud.jpg" alt=""
+              class="logo" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html"><i class="fa-solid fa-house"
+                    style="color: rgba(31,81,37,255);"></i> Trang chủ <span
+                    class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item  mx-3">
+                <a class="nav-link" href="gioithieu.html"><i class="fa-solid fa-envelope"
+                    style="color: rgba(31,81,37,255);"></i> Giới thiệu</a>
+              </li>
+              <li class="nav-item  mx-3">
+                <a class="nav-link" href="sitemap.html"><i class="fa-solid fa-location-dot"
+                    style="color: rgba(31,81,37,255);"></i> Site map</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="tintuc.html"><i class="fa-solid fa-scroll"
+                    style="color: rgba(31,81,37,255);"></i> Tin tức</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="sanpham.html"><i class="fa-solid fa-truck"
+                    style="color: rgba(31,81,37,255);"></i> Sản phẩm</a>
+              </li>
+              <li class="nav-item mx-3">
+                <!-- Tài khoản dropdown -->
+                <div class="dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownAccount"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-circle-user" style="color: rgba(31,81,37,255);"></i>
+                    Tài
+                    khoản
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownAccount">
+                    <a class="dropdown-item" href="../html/dangnhap.html">Đăng nhập</a>
+                    <a class="dropdown-item" href="../html/dangky.html">Đăng ký</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" href="gioHang.html"><i class="fa-solid fa-cart-shopping"
+                    style="color: rgba(31,81,37,255);"></i>Giỏ hàng </a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-n5" type="search" placeholder="Tìm kiếm sản phẩm ..."
+                aria-label="Search" id="searchBar" style="width: 300px;" />
+              <button class="btn btn-outline-success my-2 mx-sm-5" type="button" id="btnSearchBar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
+      <div class="row"> <!-- Thêm dòng này vào cuối cùng của header -->
+        <div class="header-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container mt-2">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form id="registerForm">
+            <table class="table table-light table-sm center-table ">
+
+              <thead class="border-0">
+                <tr>
+                  <th class="text-center text-success">
+                    <h1>Đăng ký tài khoản</h1>
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="name">Họ và tên:</label>
+                      <input type="text" class="form-control" id="name" />
+                      <span class="erten" id="erten"></span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="new_username">Tên tài khoản:</label>
+                      <input type="text" class="form-control" id="new_username" />
+                      <span class="ertendn" id="ertendn"></span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="new_pwd">Mật khẩu:</label>
+                      <input type="password" class="form-control" id="new_pwd" />
+                      <span class="erpass" id="erpass"></span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="new_pwd">Nhập lại mật khẩu:</label>
+                      <input type="password" class="form-control" id="re_pwd" />
+                      <span class="errepass" id="errepass"></span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="email">Địa chỉ email:</label>
+                      <input type="email" class="form-control" id="email" />
+                      <span class="eremail" id="eremail"></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <label for="sdt">Số điện thoại:</label>
+                      <input type="text" class="form-control" id="sdt" />
+                      <span class="ersdt" id="ersdt"></span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group form-check mb-3 form-check-inline">
+                      <input class="form-check-input" type="checkbox" value="" id="dongY" />
+                      <label class="form-check-label" for="dongY">
+                        Tôi đã đọc và đồng ý với Chính sách bảo mật của BeautyCosmetics
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <button type="button" class="btn btn-success" id="btnDK">
+                        Đăng ký
+                      </button>
+                      <a href="./index.html" class="btn btn-outline-secondary">Trở về</a>
+                    </div>
+                    <div>
+                      <p>
+                      <p>Bạn đã có tài khoản? <a href="dangnhap.html">ĐĂNG NHẬP</a></p>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="badge-dark text-md-center text-white mt-5">
+    <div class="container">
+      <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1"
+            href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+              class="fab fa-facebook-f"></i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1"
+            href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+              class="fab fa-twitter"></i></a>
+
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://mail.google.com/" role="button"><i
+              class="fab fa-google"></i></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/t.c.minh.14/"
+            role="button"><i class="fab fa-instagram"></i></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/TranCongMinh14" role="button"><i
+              class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="">
+          <form action="dangky.html">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-md-4 col-4">
+                <p class="pt-2 font-weight-bold">
+                  Sign up for our newsletter
+                </p>
+              </div>
+              <!--Grid column-->
+              <!--Grid column-->
+              <div class="col-md-4 col-4">
+                <!-- Email input -->
+                <div class="form-outline form-white mb-4">
+                  <input type="email" id="form5Example21" class="form-control" />
+                  <label class="form-label" for="form5Example21">Email address</label>
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-4 col-4">
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-outline-light mb-4">
+                  Subscribe
+                </button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+        <!-- Section: Form -->
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+              <h5 class="font-weight-bold text-uppercase">Danh mục</h5>
+              <ul class="list-unstyled mb-0 ">
+                <li class="nav-item">
+                  <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./tintuc.html">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./dangky.html">Đăng ký</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./dangnhap.html">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./gioHang.html">Giỏ hàng</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+              <h5 class="font-weight-bold text-uppercase">Hỗ trợ khách hàng</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Hướng dẫn mua hàng trực tuyến </a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Hướng dẫn thanh toán</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Gửi yêu cầu khiếu nại</a>
+                </li>
+                <li><a href="#!" class="text-white">Câu hỏi thường gặp (FAQs)</a></li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+              <h5 class="font-weight-bold text-uppercase">Chính sách</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Chính sách quy định chung</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Chính sách bảo mật</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Chính sách vận chuyển & giao nhận</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Chính sách đổi trả</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+              <h5 class="font-weight-bold text-uppercase">Thông tin khuyến mãi</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Sản phẩm nổi bật</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Sản phẩm mới</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Sản phẩm bán chạy</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Tạp chí làm đẹp</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <p>
+              <span class="font-weight-bold">Họ tên - MSSV:</span>
+              Trần Công Minh - 22638121
+            </p>
+            <p>
+              <span class="font-weight-bold">Lớp học:</span> DHKTPM18B
+            </p>
+            <p>
+              <span class="font-weight-bold">Điện thoại:</span> 0123456789 -
+              <span class="font-weight-bold">Email:</span>
+              tcminhangiang@gmail.com -
+            </p>
+            <p><span class="font-weight-bold">Copyright © hasaki.vn thegioiskhinfood – All rights
+                reserved:</span></p>
+
+          </div>
+        </div>
+      </div>
+  </footer>
+  <!-- Kiểm tra đăng ký -->
+  <script>
+    $(document).ready(function () {
+  
+      function ckHoTen() {
+        const hoTen = $("#name").val().trim(); // Lấy giá trị của trường Họ và Tên và loại bỏ khoảng trắng đầu cuối
+        if (hoTen === "") {
+          $("#erten").text("Họ và tên không được để trống").addClass('error-message');
+          $("#name").focus(); // Đặt con trỏ vào ô nhập Họ và Tên
+          return false;
+        } else {
+          $("#erten").text("").removeClass('error-message');
+          return true;
+        }
+      }
+  
+      function ckTenDangNhap() {
+        const x = $("#new_username");
+        if (x.val().length < 6) {
+          $("#ertendn").text("Tên đăng nhập ít nhất là 6 ký tự").addClass('error-message');
+          x.focus();
+          return false;
+        } else {
+          $("#ertendn").text("").removeClass('error-message');
+          return true;
+        }
+      }
+  
+      function ckMatKhau() {
+        const matKhau = $("#new_pwd").val();
+        const nhapLaiMatKhau = $("#re_pwd").val();
+        if (matKhau.length < 6) {
+          $("#erpass").text("Mật khẩu ít nhất 6 ký tự").addClass('error-message');
+          $("#errepass").text("");
+          $("#password").focus();
+          return false;
+        } else if (matKhau !== nhapLaiMatKhau) {
+          $("#erpass").text("Mật khẩu không khớp").addClass('error-message');
+          $("#errepass").text("Mật khẩu không khớp").addClass('error-message');
+          $("#password").focus();
+          return false;
+        } else if (nhapLaiMatKhau === "") {
+          $("#erpass").text("");
+          $("#errepass").text("Nhập lại mật khẩu không được để trống").addClass('error-message');
+          $("#retype-password").focus();
+          return false;
+        } else {
+          $("#erpass").text("").removeClass('error-message');
+          $("#errepass").text("").removeClass('error-message');
+          return true;
+        }
+      }
+      function ckEmail() {
+        const x = $("#email");
+        var regex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,4}$/;
+        if (!regex.test(x.val())) {
+          $("#eremail").text("Email không hợp lệ !").addClass('error-message');
+          x.focus();
+          return false;
+        } else {
+          $("#eremail").text("").removeClass('error-message');
+          return true;
+        }
+      }
+      function ckDienThoai() {
+        const x = $("#sdt");
+        if (x.val().trim() === "") {
+          $("#ersdt").text("Vui lòng nhập số điện thoại").addClass('error-message');
+          $("#sdt").focus();
+          return false;
+        } else if (isNaN(x.val())) {
+          $("#ersdt").text("Điện thoại phải là số").addClass('error-message');
+          $("#sdt").focus();
+          return false;
+        } else {
+          $("#erdt").text("").removeClass('error-message');
+          return true;
+        }
+      }
+  
+      $("#btnDK").click(function (e) {
+        let hoten = $("#name").val();
+        let tenDangNhap = $("#new_username").val();
+        let matKhau = $("#new_pwd").val();
+        let nhapLaiMK = $("#re_pwd").val();
+        let email = $("#email").val();
+        let sdt = $("#sdt").val().trim();
+        let dongY = $("#dongY").is(":checked");
+  
+        if (ckHoTen() && ckTenDangNhap() && ckMatKhau() && ckEmail() && ckDienThoai()) {
+          localStorage.setItem("name", hoten);
+          localStorage.setItem("username", tenDangNhap);
+          localStorage.setItem("password", matKhau);
+          localStorage.setItem("email", email);
+          localStorage.setItem("sdt", sdt);
+  
+          alert("Đăng ký thành công!");
+          // Chuyển hướng đến trang dangnhap
+          window.location.href = "./dangnhap.html";
+        }
+        else if (!dongY) {
+          alert(
+            "Vui lòng đồng ý với các điều khoản và điều kiện của cửa hàng"
+          );
+          return;
+        }
+        else if (tenDangNhap == "admin") {
+          alert("Tên đăng nhập đã tồn tại!");
+          return;
+        }
+  
+        else {
+          alert("Thông tin đăng nhập không hợp lệ.!");
+          // Đặt con trỏ lại ô nhập sai đầu tiên
+          if (!ckHoTen()) {
+            $("#name").focus();
+          } else if (!ckTenDangNhap()) {
+            $("#new_username").focus();
+          } else if (!ckMatKhau()) {
+            $("#new_pwd").focus();
+          } else if (!ckEmail()) {
+            $("#email").focus();
+          } else if (!ckDienThoai()) {
+            $("#sdt").focus();
+          }
+        }
+      });
+  
+    });
+    // function ckDienThoai() {
+    //   const x = $("#sdt").val();
+    //   if (x.trim() === "") {
+    //     $("#erdt").text("Vui lòng nhập số điện thoại").addClass('error-message');
+    //     $("#sdt").focus();
+    //     return false;
+    //   } else if (isNaN(x)) {
+    //     $("#erdt").text("Điện thoại phải là số").addClass('error-message');
+    //     $("#sdt").focus();
+    //     return false;
+    //   } else {
+    //     $("#erdt").text("").removeClass('error-message');
+    //     return true;
+    //   }
+    // }
+    // // Kiểm tra các trường bắt buộc không được để trống
+    // function checkRequiredFields() {
+    //   let isValid = true;
+    //   const fields = [
+    //     { id: "name", message: "Họ và tên không được để trống" },
+    //     { id: "new_username", message: "Tên đăng nhập không được để trống" },
+    //     { id: "new_pwd", message: "Mật khẩu không được để trống" },
+    //     { id: "re_pwd", message: "Vui lòng nhập lại mật khẩu" },
+    //     { id: "email", message: "Email không được để trống" },
+    //     { id: "sdt", message: "Số điện thoại không được để trống" }
+    //   ];
+  
+    //   fields.forEach(field => {
+    //     const value = $("#" + field.id).val().trim();
+    //     if (value === "") {
+    //       $("#" + field.id + "en").text(field.message).addClass('error-message');
+    //       $("#" + field.id).focus();
+    //       isValid = false;
+    //     } else {
+    //       $("#" + field.id + "en").text("").removeClass('error-message');
+    //     }
+    //   });
+  
+    //   return isValid;
+    // }
+  
+    // $("#btnDK").click(function (e) {
+    //   e.preventDefault();
+    //   const hoten = $("#name").val();
+    //   const tenDangNhap = $("#new_username").val();
+    //   const matKhau = $("#new_pwd").val();
+    //   const nhapLaiMK = $("#re_pwd").val();
+    //   const email = $("#email").val();
+    //   const sdt = $("#sdt").val();
+    //   const dongY = $("#dongY").is(":checked");
+  
+    //   if (checkRequiredFields() && ckDienThoai()) {
+    //     localStorage.setItem("hoten", hoten);
+    //     localStorage.setItem("username", tenDangNhap);
+    //     localStorage.setItem("password", matKhau);
+    //     localStorage.setItem("email", email);
+    //     localStorage.setItem("sdt", sdt);
+  
+    //     alert("Đăng ký thành công!");
+    //     // Chuyển hướng đến trang dangnhap
+    //     window.location.href = "./dangnhap.html";
+    //   } else if (!dongY) {
+    //     alert("Vui lòng đồng ý với các điều khoản và điều kiện của cửa hàng");
+    //   } else if (tenDangNhap == "admin") {
+    //     alert("Tên đăng nhập đã tồn tại!");
+    //   }
+    // });
+  
+  </script>
+  <script src="../js/data.js"></script>
+</body>
+
+
+
+</html>

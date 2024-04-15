@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán</title>
+    <link rel="shortcut icon" href="../img//Logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/format.css" />
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        $document.ready(function () {
+            $('.carousel').carousel({
+                interval: 2000
+            });
+            //phát lại video
+            function restartVideo() {
+                var video = document.getElementById("banner-videoshort");
+                video.currentTime = 0; // Thiết lập thời điểm của video về 0
+                video.play(); // Phát lại video
+            }
+
+        })
+    </script>
+    <style>
+        .payment-container {
+            max-width: 500px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-title {
+            text-align: center;
+            color: #333;
+        }
+
+        .payment-label {
+            font-weight: bold;
+        }
+
+        .payment-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .payment-button:hover {
+            background-color: #0056b3;
+        }
+
+        .payment-result {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <img src="../img/Banner/bannenowfree.jpg" alt="header-banner" class="header-banner">
+                    </div>
+                </div>
+                <div class="row"> <!-- Di chuyển dòng này lên đây -->
+                    <nav class="navbar navbar-expand-lg navbar-light ">
+                        <a class="navbar-brand" href="index.html"><img src="../img//Logo/logo-nobackgroud.jpg" alt=""
+                                class="logo" /></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html"><i class="fa-solid fa-house"
+                                            style="color: rgba(31,81,37,255);"></i> Trang chủ <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item  mx-3">
+                                    <a class="nav-link" href="gioithieu.html"><i class="fa-solid fa-envelope"
+                                            style="color: rgba(31,81,37,255);"></i> Giới thiệu</a>
+                                </li>
+                                <li class="nav-item  mx-3">
+                                    <a class="nav-link" href="sitemap.html"><i class="fa-solid fa-location-dot"
+                                            style="color: rgba(31,81,37,255);"></i> Site map</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" href="tintuc.html"><i class="fa-solid fa-scroll"
+                                            style="color: rgba(31,81,37,255);"></i> Tin tức</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" href="sanpham.html"><i class="fa-solid fa-truck"
+                                            style="color: rgba(31,81,37,255);"></i> Sản phẩm</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <!-- Tài khoản dropdown -->
+                                    <div class="dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownAccount"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-circle-user" style="color: rgba(31,81,37,255);"></i>
+                                            Tài
+                                            khoản
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownAccount">
+                                            <a class="dropdown-item" href="../html/dangnhap.html">Đăng nhập</a>
+                                            <a class="dropdown-item" href="../html/dangky.html">Đăng ký</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" href="gioHang.html"><i class="fa-solid fa-cart-shopping"
+                                            style="color: rgba(31,81,37,255);"></i>Giỏ hàng </a>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-n5" type="search" placeholder="Tìm kiếm sản phẩm ..."
+                                    aria-label="Search" id="searchBar" style="width: 300px;" />
+                                <button class="btn btn-outline-success my-2 mx-sm-5" type="button" id="btnSearchBar">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+                <div class="row"> <!-- Thêm dòng này vào cuối cùng của header -->
+                    <div class="header-line"></div>
+                </div>
+            </div>
+        </header>
+        <!-- thanhtoan -->
+        <section>
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col-md-6 col-sm-12 col-6">
+                        <h1 class="payment-title">Trang Thanh toán</h1>
+                        <form id="payment-form">
+                            <label class="payment-label" for="payment-name">Tên:</label>
+                            <input class="payment-input" type="text" id="payment-name" name="name" required>
+
+                            <label class="payment-label" for="payment-address">Địa chỉ:</label>
+                            <input class="payment-input" type="text" id="payment-address" name="address" required>
+
+                            <label class="payment-label" for="payment-card-number">Số thẻ tín dụng:</label>
+                            <input class="payment-input" type="text" id="payment-card-number" name="card-number"
+                                required>
+
+                            <label class="payment-label" for="payment-bank">Ngân hàng:</label>
+                            <select class="payment-input" id="payment-bank" name="bank">
+                                <option value="Vietcombank">Vietcombank</option>
+                                <option value="Techcombank">Techcombank</option>
+                                <option value="VietinBank">VietinBank</option>
+                                <option value="Sacombank">Sacombank</option>
+                                <!-- Thêm các tùy chọn khác nếu cần -->
+                            </select>
+
+                            <label class="payment-label" for="payment-expiry">Hạn sử dụng:</label>
+                            <input class="payment-input" type="text" id="payment-expiry" name="expiry"
+                                placeholder="MM/YY" required>
+
+                            <label class="payment-label" for="payment-cvv">CVV:</label>
+                            <input class="payment-input" type="text" id="payment-cvv" name="cvv" required>
+
+                            <button class="payment-button" type="submit">Thanh toán</button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Gửi phản hồi -->
+        <section>
+            <div class="container mt-2 ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+                            <h3>Hỏi và đáp</h3>
+                            <form action="">
+                                <div class="form-group">
+                                    <textarea id="my-textarea" class="form-control" name="question" rows="3"
+                                        placeholder="Xin mời để lại câu hỏi. Câu hỏi sẽ được trả lời trong vòng 1h, các câu hỏi sau 22h sẽ được trả lời vào sáng hôm sau."></textarea>
+                                    <button type="button" class="btn btn-primary mt-3" id="btnGui">
+                                        Gửi
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="badge-dark text-md-center text-white mt-5">
+            <div class="container">
+                <div class="container p-4">
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                                class="fab fa-facebook-f"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.facebook.com/profile.php?id=100082292613641" role="button"><i
+                                class="fab fa-twitter"></i></a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://mail.google.com/"
+                            role="button"><i class="fab fa-google"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/t.c.minh.14/"
+                            role="button"><i class="fab fa-instagram"></i></a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/TranCongMinh14"
+                            role="button"><i class="fab fa-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="dangky.html">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-center">
+                                <!--Grid column-->
+                                <div class="col-md-4 col-4">
+                                    <p class="pt-2 font-weight-bold">
+                                        Sign up for our newsletter
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+                                <!--Grid column-->
+                                <div class="col-md-4 col-4">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="form5Example21" class="form-control" />
+                                        <label class="form-label" for="form5Example21">Email address</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-4 col-4">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Danh mục</h5>
+                                <ul class="list-unstyled mb-0 ">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./index.html">Trang chủ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./tintuc.html">Tin tức</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./dangky.html">Đăng ký</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./dangnhap.html">Đăng nhập</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./gioHang.html">Giỏ hàng</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Hỗ trợ khách hàng</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Hướng dẫn mua hàng trực tuyến </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Hướng dẫn thanh toán</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Gửi yêu cầu khiếu nại</a>
+                                    </li>
+                                    <li><a href="#!" class="text-white">Câu hỏi thường gặp (FAQs)</a></li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Chính sách</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách quy định chung</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách bảo mật</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách vận chuyển & giao nhận</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Chính sách đổi trả</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-left">
+                                <h5 class="font-weight-bold text-uppercase">Thông tin khuyến mãi</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Sản phẩm nổi bật</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Sản phẩm mới</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Sản phẩm bán chạy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Tạp chí làm đẹp</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <p>
+                                <span class="font-weight-bold">Họ tên - MSSV:</span>
+                                Trần Công Minh - 22638121
+                            </p>
+                            <p>
+                                <span class="font-weight-bold">Lớp học:</span> DHKTPM18B
+                            </p>
+                            <p>
+                                <span class="font-weight-bold">Điện thoại:</span> 0123456789 -
+                                <span class="font-weight-bold">Email:</span>
+                                tcminhangiang@gmail.com -
+                            </p>
+                            <p><span class="font-weight-bold">Copyright © hasaki.vn thegioiskhinfood – All rights
+                                    reserved:</span></p>
+
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <script src="../js/data.js"></script>
+        <script src="../js/main.js"></script>
+        <script>
+            document.getElementById("payment-form").addEventListener("submit", function (event) {
+                event.preventDefault(); // Ngăn chặn gửi form mặc định
+
+                // Lấy dữ liệu từ form
+                var name = document.getElementById("name").value;
+                var address = document.getElementById("address").value;
+                var cardNumber = document.getElementById("card-number").value;
+                var expiry = document.getElementById("expiry").value;
+                var cvv = document.getElementById("cvv").value;
+
+                // Gửi dữ liệu đến hệ thống thanh toán và xử lý kết quả ở đây
+                // Ví dụ:
+                alert("Thanh toán thành công");
+                window.location.href = "../gioHang.html";
+            });
+        </script>
+    </div>
+</body>
+
+</html>
