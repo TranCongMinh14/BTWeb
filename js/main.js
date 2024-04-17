@@ -64,42 +64,52 @@ function Search() {
   }
 }
 
-// TÌm theo logo thương hiệu
+// Lọc theo logo thương hiệu
 searchLogo();
 function searchLogo() {
-  const x = document.getElementsByClassName("logo_thuonghieu");
-  for (i = 0; i < x.length; i++) {
-    x[i].addEventListener("click", (e) => {
+  const logos = document.getElementsByClassName("logo_thuonghieu");
+
+  for (let i = 0; i < logos.length; i++) {
+    logos[i].addEventListener("click", (e) => {
+      // Loại bỏ background của tất cả các logo khác
+      for (let j = 0; j < logos.length; j++) {
+        if (logos[j] !== e.target) {
+          logos[j].classList.remove("selected");
+        }
+      }
+      // Đặt background dark red cho logo được chọn
+      e.target.classList.toggle("selected");
+
       let value = e.target.alt.toLowerCase();
       let htmls = listProduct.filter((item) => {
-        return item.thuongHieu.toLocaleLowerCase().includes(value);
+        return item.thuongHieu.toLowerCase().includes(value);
       });
-      const x = htmls.map((item) => {
+      const productsHtml = htmls.map((item) => {
         return `
-      <div class="col-md-3 d-flex flex-wrap">
-        <div class="card mb-3 flex-fill">
-            <img src="${item.img}"
-            class="card-img-top img-thumbnail" alt="...">
-            <div class="card-body">
-            <a class="card-title" href="#" ><h5>${item.name}</h5></a>
-            <span style="color: red;"><del>${formatToVND(item.giaBan)}</del></span> </br>
-            <span>${formatToVND(item.giaKhuyenMai)} </span> <br>
+          <div class="col-md-3 d-flex flex-wrap">
+            <div class="card mb-3 flex-fill">
+              <img src="${item.img}" class="card-img-top img-thumbnail" alt="...">
+              <div class="card-body">
+                <a class="card-title" href="#"><h5>${item.name}</h5></a>
+                <span style="color: red;"><del>${formatToVND(item.giaBan)}</del></span> </br>
+                <span>${formatToVND(item.giaKhuyenMai)}</span> <br>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-outline-success mr-3 btnThemGioHang" type="button">
+                  <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
+                </button>
+                <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">Mua ngay</button>
+              </div>
             </div>
-            <div class="card-footer">
-            <button class="btn btn-outline-success mr-3 btnThemGioHang " type="button" >
-            <i class="fa-solid fa-cart-shopping" style="color: #003d23;"></i>
-            </button>
-            <button class="btn btn-outline-danger" type="button" id="btnMuaNgay">Mua ngay</button>
-            </div>
-        </div>
-    </div>
-      `;
+          </div>
+        `;
       });
-      document.getElementById("JsListProduct").innerHTML = x.join("\n");
+      document.getElementById("JsListProduct").innerHTML = productsHtml.join("\n");
       show_detailProduct();
     });
   }
 }
+
 
 // Hiện danh sách sản phẩm
 function showProduct() {
