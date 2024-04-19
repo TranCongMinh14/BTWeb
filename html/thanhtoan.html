@@ -403,17 +403,67 @@
                 event.preventDefault(); // Ngăn chặn gửi form mặc định
 
                 // Lấy dữ liệu từ form
-                var name = document.getElementById("name").value;
-                var address = document.getElementById("address").value;
-                var cardNumber = document.getElementById("card-number").value;
-                var expiry = document.getElementById("expiry").value;
-                var cvv = document.getElementById("cvv").value;
+                var name = document.getElementById("payment-name").value;
+                var address = document.getElementById("payment-address").value;
+                var cardNumber = document.getElementById("payment-card-number").value;
+                var expiry = document.getElementById("payment-expiry").value;
+                var cvv = document.getElementById("payment-cvv").value;
 
-                // Gửi dữ liệu đến hệ thống thanh toán và xử lý kết quả ở đây
-                // Ví dụ:
+                // Biểu thức chính quy để kiểm tra định dạng MM/YY
+                var expiryPattern = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+
+                // Biểu thức chính quy để kiểm tra CVV (3 chữ số)
+                var cvvPattern = /^\d{3}$/;
+
+                // Kiểm tra tên: chỉ chứa các ký tự chữ cái và khoảng trắng
+                var namePattern = /^[a-zA-Z\s]+$/;
+
+                // Kiểm tra tính hợp lệ của các trường dữ liệu
+                if (!namePattern.test(name)) {
+                    alert("Vui lòng nhập tên hợp lệ (chỉ chứa chữ cái và khoảng trắng)!");
+                    return;
+                }
+                if (address.trim() === "") {
+                    alert("Vui lòng nhập địa chỉ!");
+                    return;
+                }
+                if (!isValidCardNumber(cardNumber)) {
+                    alert("Vui lòng nhập số thẻ tín dụng hợp lệ!(11 chữ số)");
+                    return;
+                }
+                if (!expiryPattern.test(expiry)) {
+                    alert("Vui lòng nhập hạn sử dụng hợp lệ (MM/YY)!");
+                    return;
+                }
+                if (!cvvPattern.test(cvv)) {
+                    alert("Vui lòng nhập mã CVV hợp lệ (3 chữ số)!");
+                    return;
+                }
+
+                // Lưu dữ liệu vào localStorage
+                var paymentData = {
+                    name: name,
+                    address: address,
+                    cardNumber: cardNumber,
+                    expiry: expiry,
+                    cvv: cvv
+                };
+
+                // Chuyển đổi dữ liệu thành chuỗi JSON và lưu vào localStorage
+                localStorage.setItem('paymentData', JSON.stringify(paymentData));
+
+                // Nếu dữ liệu hợp lệ, thực hiện xử lý thanh toán và chuyển hướng người dùng đến trang chủ
                 alert("Thanh toán thành công");
-                window.location.href = "../gioHang.html";
+                window.location.href = "../html/index.html";
             });
+
+            // Hàm kiểm tra định dạng hợp lệ của số thẻ
+            function isValidCardNumber(cardNumber) {
+                // Kiểm tra định dạng: 16 chữ số
+                var cardNumberPattern = /^\d{11}$/;
+                return cardNumberPattern.test(cardNumber);
+            }
+
         </script>
     </div>
 </body>

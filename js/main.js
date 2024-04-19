@@ -86,6 +86,7 @@ function searchLogo() {
       });
       const productsHtml = htmls.map((item) => {
         return `
+        
           <div class="col-md-3 d-flex flex-wrap">
             <div class="card mb-3 flex-fill">
               <img src="${item.img}" class="card-img-top img-thumbnail" alt="...">
@@ -218,8 +219,15 @@ function show_detailProduct() {
   }
 }
 
-const isLoggedIn = localStorage.getItem('isLoggedIn')
+let isLoggedIn = localStorage.getItem('isLoggedIn')
+if (!isLoggedIn) {
+  // Tạo biến isLoggedIn với giá trị mặc định là false
+  isLoggedIn = false;
+  // Lưu giá trị false vào localStorage
+  localStorage.setItem('isLoggedIn', isLoggedIn);
+}
 // Xử lý sự kiện trước khi đóng trang
+
 window.addEventListener('beforeunload', function (event) {
   // Lưu thông tin giỏ hàng vào localStorage
   if (isLoggedIn !== undefined && isLoggedIn === true) {
