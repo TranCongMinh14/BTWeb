@@ -1,0 +1,25 @@
+.container-fluid {
+    margin: 0px auto;
+    padding: 0px 100px 0px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+[class*col-] {
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 1px solid green;
+}
+
+.banner-container {
+    height: 50px;
+    display: flex;
+    
+}
+
+.img-banner {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}

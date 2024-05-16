@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <style>
+      img {
+        width: 70px;
+        height: 70px;
+      }
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>STT</td>
+            <td>Hình ảnh</td>
+            <td>Giá</td>
+            <td>Số lượng</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><img src="../IMG/hoa1.jpg" alt="" /></td>
+            <td class="price">20000</td>
+            <td>
+              <input class="num" type="text" name="" id="" /><span></span>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><img src="../IMG/hoa2.jpg" alt="" /></td>
+            <td class="price">40000</td>
+            <td>
+              <input class="num" type="text" name="" id="" /><span></span>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><img src="../IMG/hoa3.jpeg" alt="" /></td>
+            <td class="price">30000</td>
+            <td>
+              <input class="num" type="text" name="" id="" /><span></span>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><img src="../IMG/hoa4.jpeg" alt="" /></td>
+            <td class="price">50000</td>
+            <td>
+              <input class="num" type="text" name="" id="" /><span></span>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><img src="../IMG/hoa5.jpg" alt="" /></td>
+            <td class="price">30000</td>
+            <td>
+              <input class="num" type="text" name="" id="" /><span></span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Tổng thành tiền:</td>
+            <td id="total"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      //   let value = 0;
+      document.querySelectorAll("input").forEach((item) => {
+        item.addEventListener("change", (e) => {
+          if (isNaN(item.value.trim())) {
+            e.target.parentElement.childNodes[2].innerHTML =
+              "Số lượng phải là số !";
+            return false;
+          } else {
+            total();
+          }
+        });
+      });
+
+      function total() {
+        let value = 0;
+        document.querySelectorAll("input").forEach((item) => {
+          if (!isNaN(item.value)) {
+            value +=
+              item.value * item.parentElement.previousElementSibling.innerHTML;
+            document.getElementById("total").innerHTML = value;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

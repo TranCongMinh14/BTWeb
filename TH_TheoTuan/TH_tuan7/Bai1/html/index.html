@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai1</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <style>
+        .card-text {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .card-img-top {
+            width: 100X;
+            height: 300px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#lion").attr("src", "../img/lion.jpg");
+            $("#cat").attr("src", "../img/cat.jpg");
+            $("#bird").attr("src", "../img/bird.jpg");
+            $("#rhino").attr("src", "../img/rhino.jpg");
+            $("#panda").attr("src", "../img/panda.jpg");
+            $("#goat").attr("src", "../img/sheep.jpg");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container d-grid gap-5">
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <p class="fs-3 fw-bold">Animal Gallery</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="lion" class="card-img-top" alt="#lion">
+                    <div class="card-body">
+                        <p class="card-text">Lion</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="cat" class="card-img-top" alt="#cat">
+                    <div class="card-body">
+                        <p class="card-text">Cat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="bird" class="card-img-top" alt="#bird">
+                    <div class="card-body">
+                        <p class="card-text">Bird</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="rhino" class="card-img-top" alt="#rhino">
+                    <div class="card-body">
+                        <p class="card-text">Rhino</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="panda" class="card-img-top" alt="#panda">
+                    <div class="card-body">
+                        <p class="card-text">Panda</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="goat" class="card-img-top" alt="#goat">
+                    <div class="card-body">
+                        <p class="card-text">Goat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

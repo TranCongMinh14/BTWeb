@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+  <script src="../JS/jquery-3.7.1.min.js"></script>
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      background-color: #3b5798;
+    }
+
+    span {
+      display: block;
+      color: red;
+    }
+
+    header h1,
+    header label {
+      color: aliceblue;
+    }
+
+    header form>* {
+      display: inline-block;
+    }
+
+    .body {
+      height: 900px;
+    }
+
+    section,
+    aside {
+      background-color: #e5e6fb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Facebook</h1>
+      <form action="" style="">
+        <div class="form-group">
+          <label for="">Email hoặc điện thoại</label>
+          <br />
+          <input type="text" name="" id="emailOrPhone" />
+        </div>
+        <div class="form-group">
+          <label for="">Mật khẩu</label>
+          <br />
+          <input type="password" name="" id="password" />
+        </div>
+        <button type="submit">Đăng nhập</button>
+      </form>
+    </header>
+    <div class="body" style="display: flex">
+      <section style="position: relative; width: 40%">
+        <div>
+          <img src="../IMG/img_side1.png" alt="#anh" />
+
+        </div>
+      </section>
+
+      <aside style="width: 60%">
+        <br />
+        <h1>Đăng ký</h1>
+        <br />
+        <p style="font-weight: bold;">Miễn phí và sẽ luôn như vậy</p>
+        <br />
+        <form action="">
+          <div style="display: flex">
+            <div class="form-group">
+              <input onblur="validateName('ho', 'mgho')" type="text" name="" id="ho" placeholder="Họ " />
+              <span id="mgho"></span>
+            </div>
+            <div class="form-group">
+              <input onblur="validateName('ten', 'mgten')" type="text" name="" id="ten" placeholder="Tên " />
+              <span id="mgten"></span>
+            </div>
+          </div>
+          <br />
+          <input onblur="validateEmail('email', 'mgemail')" id="email" style="width: 385px" type="email" class=""
+            placeholder="Email đăng nhập" />
+          <span id="mgemail"></span> <br />
+
+          <input onblur="validateConfirmEmail()" style="width: 385px" type="email" class="" id="remail"
+            placeholder="Nhập lại Email " />
+          <span id="mgremail"></span> <br />
+
+          <input onblur="validatePassword()" style="width: 385px" type="password" placeholder="Mật khẩu" id="mkhau" />
+          <span id="mgmkhau"></span> <br />
+
+          <input onblur="validateYearOfBirth()" id="nam" style="width: 385px" type="text" placeholder="Năm sinh" />
+          <span id="mgnam"></span> <br />
+
+          <div onclick="register()" class="btn btn-success" style="width: 120px">
+            Đăng ký
+          </div>
+          <span id="mgdangky"></span>
+        </form>
+      </aside>
+    </div>
+    <footer style="display: block;  clear: both;background-color: #e5e6fb;">
+      <p style="font-weight: bold;">
+        Chúng tôi mong sớm gặp lại bạn.
+      </p>
+    </footer>
+  </div>
+  <script>
+    function validateName(inputId, spanId) {
+      const value = document.getElementById(inputId).value.trim();
+      let regex = /^[A-Z]{1}[a-z]*$/;
+      if (regex.test(value)) {
+        displayMessage(spanId, "Hợp lệ", true);
+        return true;
+      } else {
+        displayMessage(spanId, "Họ không hợp lệ !", false);
+        return false;
+      }
+    }
+
+    function validateEmail(inputId, spanId) {
+      const value = document.getElementById(inputId).value.trim();
+      let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (regex.test(value)) {
+        displayMessage(spanId, "Hợp lệ", true);
+        return true;
+      } else {
+        displayMessage(spanId, "Email không hợp lệ !", false);
+        return false;
+      }
+    }
+
+    function validateConfirmEmail() {
+      if (validateEmail('email', 'mgemail')) {
+        if (document.getElementById("email").value.trim() == document.getElementById("remail").value.trim()) {
+          displayMessage("mgremail", "Hợp lệ", true);
+          return true;
+        } else {
+          displayMessage("mgremail", "Email không khớp !", false);
+          return false;
+        }
+      }
+    }
+
+    function validatePassword() {
+      const value = document.getElementById("mkhau").value.trim();
+      let regex = /((?=.*[0-9])(?=.*[A-Z]).{6,})/;
+      if (regex.test(value)) {
+        displayMessage("mgmkhau", "Hợp lệ", true);
+        return true;
+      } else {
+        displayMessage("mgmkhau", "Mật khẩu không hợp lệ !", false);
+        return false;
+      }
+    }
+
+    function validateYearOfBirth() {
+      const year = document.getElementById("nam").value.trim();
+      if (!isNaN(parseInt(year))) {
+        if (year < 2002) {
+          displayMessage("mgnam", "Hợp lệ", true);
+          return true;
+        } else {
+          displayMessage("mgnam", "Năm không hợp lệ (<2002) !", false);
+          return false;
+        }
+      } else {
+        displayMessage("mgnam", "Năm phải là số !", false);
+        return false;
+      }
+    }
+
+    function register() {
+      if (validateEmail('email', 'mgemail') && validateName('ho', 'mgho') &&
+        validateName('ten', 'mgten') && validatePassword() && validateConfirmEmail() &&
+        validateYearOfBirth()) {
+        alert("Đăng ký thành công");
+      }
+    }
+
+    function displayMessage(elementId, message, valid) {
+      const element = document.getElementById(elementId);
+      element.innerHTML = message;
+      element.style.color = valid ? "green" : "red";
+    }
+  </script>
+</body>
+
+</html>

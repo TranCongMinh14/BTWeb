@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+  <script src="../JS/jquery-3.7.1.min.js"></script>
+  <script src="../JS/jquery-3.7.1.min.js"></script>
+  <style>
+    span {
+      color: red;
+    }
+
+    .wrapper {
+      border: 1px solid rgb(2, 2, 163);
+      padding: 10px;
+      width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <form action="">
+        <div class="row">
+          <div class="col-3"><label for="">Họ tên:</label></div>
+          <div class="col-9">
+            <input onblur="ckHoten()" type="text" name="" id="hoten" autofocus />
+            <span id="mghoten"></span>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-3"><label for="">Lớp:</label></div>
+          <div class="col-9">
+            <select name="" id="lop">
+              <option value="Đại học Kỹ thuật phần mềm 18B">
+                Đại học Kỹ thuật phần mềm 18B
+              </option>
+              <option value="Đại học Khoa học dữ liệu 18B">
+                Đại học Khoa học dữ liệu 18B
+              </option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-3"><label for="">Môn học:</label></div>
+          <div class="col-9">
+            <select name="" id="mon">
+              <option value="Lập trình hướng đối tượng">
+                Lập trình hướng đối tượng
+              </option>
+              <option value="Hệ thống và công nghệ web">
+                Hệ thống và công nghệ web
+              </option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-3"><label for="">Loại:</label></div>
+          <div class="col-9">
+            <input type="radio" value="Lý thuyết" name="loai" id="rdLyThuyet" checked />Lý thuyết
+            <input type="radio" value="Thực hành" name="loai" id="" />Thực
+            hành
+          </div>
+        </div>
+        <br />
+        <div onclick="dangky()" id="dangky" class="btn btn-secondary disabled">
+          Đăng ký
+        </div>
+      </form>
+      <br />
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Họ tên</th>
+            <th>Lớp</th>
+            <th>Môn học đăng ký</th>
+            <th>Loại</th>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function ckHoten() {
+      const value = document.getElementById("hoten").value.trim();
+      let regex = /^([A-Z]{1}[a-z]*)(\s[A-Z]{1}[a-z]*)*(\s[A-Z]{1}[a-z]*)$/;
+
+      if (regex.test(value)) {
+        document.getElementById("mghoten").innerHTML = "Hợp lệ";
+        document.getElementById("dangky").classList.remove("disabled");
+        return true;
+      } else {
+        document.getElementById("mghoten").innerHTML =
+          "Họ tên bắt buộc nhập, chữ hoa đầu mỗi từ";
+        document.getElementById("dangky").classList.add("disabled");
+
+        return false;
+      }
+    }
+
+    function dangky() {
+      // let loai = $('input[type="radio"]:checked').val();
+      let l = document.querySelectorAll("input[type='radio']");
+      let loai;
+      for (i = 0; i < l.length; i++) {
+        if (l[i].checked) {
+          loai = l[i].value;
+          console.log(l[i].value);
+        }
+      }
+      $("#data").append(`<tr>
+              <td>${document.getElementById("hoten").value.trim()}</td>
+              <td>${document.getElementById("lop").value}</td>
+              <td>${document.getElementById("mon").value}</td>
+               <td>${loai}</td>
+            </tr>`);
+    }
+  </script>
+</body>
+
+</html>

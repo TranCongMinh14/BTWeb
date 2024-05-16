@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css"
+        integrity="sha512-f2MWjotY+JCWDlE0+QAshlykvZUtIm35A6RHwfYZPdxKgLJpL8B+VVxjpHJwZDsZaWdyHVhlIHoblFYGkmrbhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./style/index.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-9 text-left ">
+        <p>180 Cao Lỗ, phường 4, quận 8,TP.Hồ Chí Minh - Trường Đại học Công nghệ Sài Gòn</p>
+      </div>
+      <div class="col-sm-3 text-right">
+        <a href="" class="btn text-dark btn-light w-25 login-name"></a>
+        <a class="btn btn-light text-dark w-25" href="login.html">Login</a>
+      </div>
+    </div>
+  </div>
+    <!-- Nav -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="col-sm-3 text-center">
+                <img src="./image/logo/logo.png" width="20%" alt="">
+            </div>
+            <div class="col-sm-5">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="index.html"><button type="button" class="btn btn-dark">Trang Chủ</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="btn-group">
+                            <a class="nav-link active text-white" href="product.html"><button type="button" class="btn btn-dark">Sản Phẩm</button></a>
+                            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Dell</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Mac</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Acer</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Lenovo</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Gigabyte</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Asus</a>
+                            </div>
+                          </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="lienhe.html"><button type="button" class="btn btn-dark">Liên Hệ</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="about.html"><button type="button" class="btn btn-dark">About</button></a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-sm-4 text-right row">
+                <form class="d-flex input-group w-auto">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                    <span class="input-group-text text-white border-0" id="search-addon">
+                        <i style="color: black;" class="fas fa-search"></i>
+                    </span>
+                    <button class="btn ml-2">
+                        <i class="fa fa-cart-plus" style="color: black;" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- sanpham chinh -->
+    <div class="col-sm-12 mt-3">
+        <div class="container">
+            <div class="col-sm-12 bg-success">
+                <span style="color: white; font-weight: 500; font-size: 20px;">Sản Phẩm</span>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="sanpham row">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- footer -->
+    <!-- Footer -->
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white mt-5">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>Sign up for our newsletter</strong>
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example21" class="form-control" />
+                <label class="form-label" for="form5Example21">Email address</label>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-outline-light mb-4">
+                Subscribe
+              </button>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+          eum harum corrupti dicta, aliquam sequi voluptate quas.
+        </p>
+      </section>
+      <!-- Section: Text -->
+
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Hỗ trợ khách hàng</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Hướng dẫn mua hàng trực tuyến </a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">hướng dẫn thanh toán</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">gửi yêu cầu khiếu nại</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Chính sách</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Chính sách quy định chung</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Chính sách vận chuyển</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Chính sách bảo hành</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Chính sách chi doanh nghiệp</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Thông tin khuyến mãi</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Thông tin khuyến mãi</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Sản phẩm bán chạy</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Sản phẩm mới</a>
+              </li>
+
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+    </div>
+    <script>
+      var login = localStorage.getItem("login")
+      if (login != null) {
+        var temp = JSON.parse(login)
+        $(".login-name").html(temp.username)
+      } else {
+        $(".login-name").html("")
+      }
+      $(".login-name").click(function () {
+        delete localStorage["login"]
+        window.location.href = "http://127.0.0.1:5500/index.html"
+      })
+        $(document).ready(function () {
+            getDataSanPham()
+        })
+        function getDataSanPham() {
+            $.ajax({
+                type: "get",
+                url: "http://127.0.0.1:8080/sanpham",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response)
+                    var sanpham = $(".sanpham")
+                    createCart(response, sanpham)
+                }
+            });
+        }
+        function createCart(paramObj, element) {
+            for (var bIndex in paramObj) {
+                var chuoi = paramObj[bIndex].hinhAnh;
+                var chuoiDaXL = chuoi.slice(12, chuoi.length)
+                var html = `<div class="card mt-3 ml-2 mr-2" style="width: 16rem;">
+                                <img class="card-img-top" src="./image/${chuoiDaXL}" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="col-sm-12">
+                                        <p class="card-text name-product">${paramObj[bIndex].model}</p>    
+                                        <p class="card-text price">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(paramObj[bIndex].gia)}</p>
+                                        <div class="col-sm-12">
+                                          <div class="row">
+                                            <a href="http://127.0.0.1:5500/productdetail.html?id=${paramObj[bIndex].id}"><button class="btn btn-success btn-chitiet">Chi tiết</button></a>
+                                            <button class="btn btn-success ml-2">Đặt hàng</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+                element.append(html);
+            }
+        }
+    </script>
+</body>
+
+</html>

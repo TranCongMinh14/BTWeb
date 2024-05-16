@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai2a</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <style>
+        /* selcetor class bắt đầu bằng er và set màu */
+        /* [class^='er'] {
+            color: red;
+            font-style: italic;
+        } */
+
+        .mauDo {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            let STT = 1;
+            function kiemtraHoTen() {
+                let hoten = $("#txtHoTen").val().trim();
+                let regHoten = /^[A-Z][a-z]+(\s[A-Z][a-z]+)+$/;
+
+                if (hoten == "") {
+                    $(".erhoten").html("Họ tên bắt buộc nhập !!!");
+                    $(".erhoten").addClass("mauDo");
+                    return false;
+                }
+                if (!regHoten.test(hoten)) {
+                    $(".erhoten").html("Họ tên phải được viết hoa chữ cái đầu");
+                    $(".erhoten").addClass("mauDo");
+                    return false;
+                }
+                else {
+                    $(".erhoten").html("*");
+                    $(".erhoten").removeClass("mauDo");
+                    return true;
+                }
+            }
+            $("#txtHoTen").blur(kiemtraHoTen);
+
+            function kiemtraMK() {
+                let mk = $("#txtMatKhau").val().trim();
+                let regMk = /^[A-Z](?=.?[a-z])(?=.*\d).{6,}$/
+
+
+
+                if (mk == "") {
+                    $(".ermk").html("Mật khẩu bắt buộc nhập !!!");
+                    $(".ermk").addClass("mauDo");
+                    return false;
+                }
+                if (!regMk.test(mk)) {
+                    $(".ermk").html("Mật khẩu bắt đầu bằng chữ cái viết hoa ít nhất 6 kí tự và phải chứa số");
+                    $(".ermk").addClass("mauDo");
+                    return false;
+                }
+                else {
+                    $(".ermk").html("*");
+                    $(".ermk").removeClass("mauDo");
+                    return true;
+                }
+            }
+            $("#txtMatKhau").blur(kiemtraMK);
+
+            $("#register").click(function (e) {
+                e.preventDefault();
+                kiemtraHoTen();
+                kiemtraMK();
+                if (kiemtraHoTen() && kiemtraMK()) {
+                    alert("Đăng kí thành công");
+
+
+                    let name = $("#txtHoTen").val();
+                    localStorage.setItem("name", name);
+                    let pass = $("#txtMatKhau").val();
+                    localStorage.setItem("pass", pass);
+                    window.location.href = "../html/dangnhap.html"
+                }
+                else {
+                    alert("Nhập lại");
+                }
+            });
+
+            $("#huy").click(function (e) {
+                e.preventDefault();
+                $("#txtHoTen").val("");
+                $("#txtMatKhau").val("");
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4>THÔNG TIN ĐĂNG KÍ</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row ">
+                                <label for="txtHoTen" class="col-sm-3 col-form-label">Họ tên:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtHoTen" placeholder="Họ và tên">
+                                    <span class="erhoten">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="txtMatKhau" class="col-sm-3 col-form-label">Mật khẩu:</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="txtMatKhau" placeholder="Mật khẩu">
+                                    <span class="ermk">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-9 offset-sm-3">
+                                    <button type="submit" class="btn btn-success" id="register">Đăng Kí</button>
+                                    <button type="submit" class="btn btn-secondary" id="huy">Hủy</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

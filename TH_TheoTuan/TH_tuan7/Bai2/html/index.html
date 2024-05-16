@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai2</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <style>
+        .news-table td,
+        .market-price-table td,
+        .price-board td {
+            border: 1px solid black;
+        }
+
+        .news-table table,
+        .market-price-table table,
+        .price-board table {
+            width: 100%;
+
+            thead {
+                color: blue;
+                text-align: center;
+                font-weight: bold;
+                font-size: larger;
+                background-color: lightgray;
+            }
+
+            .details {
+                color: steelblue;
+                font-weight: bold;
+
+            }
+
+            .price-board__item {
+                color: green;
+                font-weight: bold;
+            }
+        }
+
+        .news-table {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+
+            thead {
+                color: blue;
+                font-weight: bold;
+                font-size: larger;
+                background-color: lightgray;
+            }
+
+            tbody td[colspan="2"] {
+                color: steelblue;
+                font-weight: bold;
+                background-color: lightgray;
+            }
+
+            td[colspan="1"] {
+                color: steelblue;
+                font-weight: bold;
+            }
+        }
+
+        .market-price-table {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            background-color: lightgray;
+
+            thead {
+                color: blue;
+                text-align: center;
+                font-size: larger;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $("#in-price").focus()
+
+            function checkData(val, err) {
+                let reg = /\d+/;
+                if (val !== null && reg.test(val)) {
+                    $(err).html("*")
+                    return true
+                } else {
+                    $(err).html("Dữ liệu phải là số")
+                    return false
+                }
+            }
+
+            function updateBtnStatus(val1, val2) {
+                let reg = /\d+/;
+                let rd = $("input[name = 'currentcy']:checked").val()
+                if (reg.test(val1) && reg.test(val2)) {
+                    $("#update").attr("disabled", false)
+                }
+            }
+
+
+            $("#car-type").change(function (e) {
+                let xe = $("#car-type").val()
+                let img, price, loc
+                xe = new String(xe);
+                loc = xe.indexOf(";")
+                img = xe.substr(0, loc);
+                price = xe.substr(loc + 1, xe.length)
+                $("#car-img").attr("src", img)
+                $("#car-price").html(price)
+            })
+
+            $("#in-price").focus(function (e) {
+                $("#state").attr("disabled", true)
+            })
+
+            $("#out-price").focus(function (e) {
+                $("#state").attr("disabled", true)
+            })
+
+            $("#in-price").blur(function (e) {
+                let p = $("#in-price").val()
+                if (checkData(p, "#err-in")) {
+                    $("#state").attr("disabled", false)
+                }
+            })
+
+            $("#out-price").blur(function (e) {
+                let p = $("#out-price").val()
+                if (checkData(p, "#err-out")) {
+                    $("#state").attr("disabled", false)
+                }
+            })
+
+            $('#in-price, #out-price').on('input', function () {
+                var val1 = $('#in-price').val();
+                var val2 = $('#out-price').val();
+                updateBtnStatus(val1, val2);
+            });
+
+
+            $("#update").click(function (e) {
+                let inprice = $("#in-price").val()
+                let outprice = $("#out-price").val()
+                let rd = $("input[name = 'currentcy']:checked").val()
+                if (rd == "gold") {
+                    $("#gold-in").html(inprice)
+                    $("#gold-out").html(outprice)
+                }
+                if (rd == "usd") {
+                    $("#usd-in").html(inprice)
+                    $("#usd-out").html(outprice)
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header>
+                    <img src="../img/banner_car.jpg" class="w-100" alt="#banner">
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <form action="" class="news-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <p>Bảng tin thị trường</p>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">Vàng</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">
+                                    <p>Mua vào</p>
+                                </td>
+                                <td colspan="1">
+                                    <p>Bán ra</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="gold-in"></p>
+                                </td>
+                                <td>
+                                    <p id="gold-out"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">USD</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">
+                                    <p>Mua vào</p>
+                                </td>
+                                <td colspan="1">
+                                    <p>Bán ra</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="usd-in"></p>
+                                </td>
+                                <td>
+                                    <p id="usd-out"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form action="" class="market-price-table">
+                    <table>
+                        <thead>
+                            <td colspan="3">
+                                <p>Cập nhật giá cả thị trường</p>
+                            </td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="in-price" class="form-label">Mua vào</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="in-price" id="in-price" class="form-control"><span
+                                        class="text-danger fst-italic" id="err-in">*</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="out-price" class="form-label">Bán ra</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="out-price" id="out-price" class="form-control"><span
+                                        class="text-danger fst-italic" id="err-out">*</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="car-type" class="form-label">Loại xe</label>
+                                </td>
+                                <td colspan="2">
+                                    <select name="car-type" id="car-type">
+                                        <option value="../img/car1.jpg; 35000">Toyota</option>
+                                        <option value="../img/car2.jpg;15000">KIA</option>
+                                        <option value="../img/car3.jpg;40000">Rolls Royce</option>
+                                        <option value="../img/car4.jpg;32000">Civic</option>
+                                        <option value="../img/car5.jpg;50000">Ferrari</option>
+                                        <option value="../img/car7.jpg;45000">Mercedes</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="currentcy" value="gold">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Vàng
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="currentcy" value="usd">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            USD
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <button type="button" class="btn btn-secondary" id="update" disabled>Update</button>
+                                    <button type="button" class="btn btn-secondary" id="state">State</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <form action="" class="price-board">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>
+                                    <p>Bảng báo giá</p>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="details">
+                                <td>
+                                    <p>-Với kiểu dáng thể thao, sang trọng.</p>
+                                    <p>-Nổi bật, ít tốn nhiên liệu</p>
+                                    <p>-Kiểu dáng thể thao</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex justify-content-center p-3">
+                                        <img id="car-img" src="../img/car1.jpg" alt="#car1">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="price-board__item">
+                                <td>
+                                    <p>Giá: <span id="car-price"> 35000</span> USD</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

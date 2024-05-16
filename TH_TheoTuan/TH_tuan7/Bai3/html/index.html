@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 1px solid green;
+            padding: 10px;
+            background-color: #ecfdea;
+        }
+
+        #register-form td {
+            background-color: #ecfdea;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        #register-form table {
+            width: 80%;
+
+            #form-label {
+                text-align: right;
+            }
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            function ckHoTen() {
+                const hoTen = $("#txtname").val().trim(); // Lấy giá trị của trường Họ và Tên và loại bỏ khoảng trắng đầu cuối
+                if (hoTen === "") {
+                    $("#erten").text("Họ và tên không được để trống").addClass('error-message');
+                    $("#txtname").focus(); // Đặt con trỏ vào ô nhập Họ và Tên
+                    return false;
+                } else {
+                    $("#erten").text("").removeClass('error-message');
+                    return true;
+                }
+            }
+
+            function ckTenDangNhap() {
+                const x = $("#username");
+                if (x.val().length < 6) {
+                    $("#ertendn").text("Tên đăng nhập ít nhất là 6 ký tự").addClass('error-message');
+                    x.focus();
+                    return false;
+                } else {
+                    $("#ertendn").text("").removeClass('error-message');
+                    return true;
+                }
+            }
+
+            function ckDienThoai() {
+                const x = $("#telephone");
+                if (isNaN(x.val())) {
+                    $("#erdt").text("Điện thoại phải là số").addClass('error-message');
+                    x.focus();
+                    return false;
+                } else {
+                    $("#erdt").text("").removeClass('error-message');
+                    return true;
+                }
+            }
+
+            function ckEmail() {
+                const x = $("#email");
+                var regex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,4}$/;
+                if (!regex.test(x.val())) {
+                    $("#eremail").text("Email không hợp lệ !").addClass('error-message');
+                    x.focus();
+                    return false;
+                } else {
+                    $("#eremail").text("").removeClass('error-message');
+                    return true;
+                }
+            }
+
+            function ckMatKhau() {
+                const matKhau = $("#password").val();
+                const nhapLaiMatKhau = $("#retype-password").val();
+                if (matKhau.length < 6) {
+                    $("#erpass").text("Mật khẩu ít nhất 6 ký tự").addClass('error-message');
+                    $("#errepass").text("");
+                    $("#password").focus();
+                    return false;
+                } else if (matKhau !== nhapLaiMatKhau) {
+                    $("#erpass").text("Mật khẩu không khớp").addClass('error-message');
+                    $("#errepass").text("Mật khẩu không khớp").addClass('error-message');
+                    $("#password").focus();
+                    return false;
+                } else if (nhapLaiMatKhau === "") {
+                    $("#erpass").text("");
+                    $("#errepass").text("Nhập lại mật khẩu không được để trống").addClass('error-message');
+                    $("#retype-password").focus();
+                    return false;
+                } else {
+                    $("#erpass").text("").removeClass('error-message');
+                    $("#errepass").text("").removeClass('error-message');
+                    return true;
+                }
+            }
+
+            function sendInfo() {
+                if (ckHoTen() && ckTenDangNhap() && ckMatKhau() && ckEmail() && ckDienThoai()) {
+                    localStorage.setItem("HovaTen", $("#txtname").val());
+                    localStorage.setItem("TenDangNhap", $("#username").val());
+                    localStorage.setItem("MatKhau", $("#password").val());
+                    localStorage.setItem("NgaySinh", $("#birthday").val());
+                    localStorage.setItem("DienThoai", $("#telephone").val());
+                    localStorage.setItem("DiaChi", $("#address").val());
+                    localStorage.setItem("Email", $("#email").val());
+
+                    const selectedHobbies = $("#hobby").val();
+                    localStorage.setItem("SoThich", selectedHobbies);
+
+                    alert("Đăng ký thành công!");
+                    // Chuyển hướng đến trang thongtin.html nếu cần
+                    window.open("thongtin.html", "_self");
+                } else {
+                    // Đặt con trỏ lại ô nhập sai đầu tiên
+                    if (!ckHoTen()) {
+                        $("#txtname").focus();
+                    } else if (!ckTenDangNhap()) {
+                        $("#username").focus();
+                    } else if (!ckMatKhau()) {
+                        $("#password").focus();
+                    } else if (!ckEmail()) {
+                        $("#email").focus();
+                    } else if (!ckDienThoai()) {
+                        $("#telephone").focus();
+                    }
+                }
+            }
+
+
+            $("#register").click(sendInfo);
+
+            $('#cancel').click(function () {
+                $('#register-form')[0].reset();
+                $('#frmDK').modal('hide');
+            });
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center">Register Form</h3>
+                <form id="register-form">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td><label class="form-label">Họ và tên (*)</label></td>
+                                <td><input type="text" name="name" id="txtname" class="form-control"><span class="erten"
+                                        id="erten"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Tên Đăng Nhập (*)</label></td>
+                                <td><input type="text" name="username" id="username" class="form-control"><span
+                                        class="ertendn" id="ertendn"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Mật khẩu (*)</label></td>
+                                <td><input type="password" name="password" id="password" class="form-control"><span
+                                        class="erpass" id="erpass"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label for="retype-password" class="form-label">Xác nhận mật khẩu
+                                        (*)</label></td>
+                                <td><input type="password" name="retype-password" id="retype-password"
+                                        class="form-control"><span class="errepass" id="errepass"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Ngày sinh</label></td>
+                                <td><input type="date" name="birthdate" id="birthday"><span class="erns"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Điện thoại</label></td>
+                                <td><input type="text" name="telephone" id="telephone" class="form-control"><span
+                                        class="erdt" id="erdt"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Địa chỉ</label></td>
+                                <td><input type="text" name="address" id="address" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Email khác</label></td>
+                                <td><input type="email" name="email" id="email" class="form-control"><span
+                                        class="eremail" id="eremail"></span></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Sở thích</label></td>
+                                <td><select name="hobby" id="hobby" class="form-select">
+                                        <option value="Ca nhạc">Ca nhạc</option>
+                                        <option value="Đọc sách">Đọc sách</option>
+                                        <option value="Xem phim">Xem phim</option>
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="register">Đăng ký</button>
+                                    <button type="button" class="btn btn-secondary" id="cancel"
+                                        data-bs-dismiss="modal">Hủy</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

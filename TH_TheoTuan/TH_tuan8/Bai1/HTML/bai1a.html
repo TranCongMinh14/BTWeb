@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+  <script src="../JS/jquery-3.7.1.min.js"></script>
+  <script src="../JS/jquery-3.7.1.min.js"></script>
+  <style>
+    * {
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    span {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="" class="mx-auto" style="border: 1px solid #000; width: 600px">
+      <table class="table">
+        <tr>
+          <th>
+            <h2 class="text-center">ĐĂNG KÝ TÀI KHOẢN</h2>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Tên đăng nhập:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ckTenDangNhap()" type="text" name="" id="tendangnhap" placeholder="txtDN" />
+                  <span id="mgtendangnhap">*</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Mật khẩu:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ckMatKhau()" type="password" name="" id="matkhau" placeholder="txtMK" />
+                  <span id="mgmatkhau">*</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Nhập lại mật khẩu:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ktLaiMatKhau()" type="password" name="" id="rematkhau" placeholder="txtXNDN" />
+                  <span id="mgrematkhau">*</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <table class="table">
+        <tr>
+          <th>
+            <h4 class="text-center">THÔNG TIN CÁ NHÂN</h4>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Họ và tên:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ckHoten()" type="text" name="" id="hoten" placeholder="txtName" />
+                  <span id="mghoten">* bắt buộc</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Ngày sinh:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ckNgay()" type="date" name="" id="ngaysinh" />
+                  <span id="mgngaysinh">*</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Giới tính:</label>
+                </div>
+                <div class="col-8">
+                  <input type="radio" name="gioitinh" id="" />Nam
+                  <input type="radio" name="gioitinh" id="" />Nữ
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Địa chỉ:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ckDiaChi()" type="text" name="" id="diachi" placeholder="txtDC" />
+                  <span id="mgdiachi">*</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Điện thoại:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ckDienThoai()" type="text" name="" id="dienthoai" placeholder="txtDT" />
+                  <span id="mgdienthoai">*</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-inline">
+              <div class="row">
+                <div class="col-4">
+                  <label style="text-align: right; width: 100%" for="">Email:</label>
+                </div>
+                <div class="col-8">
+                  <input onblur="ckEmail()" type="email" name="" id="email" placeholder="txtEmail" />
+                  <span id="mgemail">*</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <br />
+      <div class="text-center">
+        <div class="btn btn-dark">Đăng ký</div>
+        <div class="btn btn-dark">Hủy</div>
+      </div>
+    </form>
+  </div>
+  <script>
+    function ckTenDangNhap() {
+      const value = document.getElementById("tendangnhap").value.trim();
+      console.log(value);
+      let regex = /^[a-zA-Z]{1}[a-zA-Z0-9!@#$%^&*()]+$/;
+      if (regex.test(value)) {
+        document.getElementById("mgtendangnhap").innerHTML = "Hợp lệ";
+        return true;
+      } else {
+        document.getElementById("mgtendangnhap").innerHTML =
+          "Tên đăng nhập: bắt đầu là ký tự, có hoặc không có ký tự số, ký tự đặc biệt và không được có khoảng trắng";
+        return false;
+      }
+    }
+    function ckMatKhau() {
+      const value = document.getElementById("matkhau").value.trim();
+      let regex = /((?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*()]).{8,})/;
+      if (regex.test(value)) {
+        document.getElementById("mgmatkhau").innerHTML = "Hợp lệ";
+        return true;
+      } else {
+        document.getElementById("mgmatkhau").innerHTML =
+          "Tên đăng nhập: bắt đầu là ký tự, có hoặc không có ký tự số, ký tự đặc biệt và không được có khoảng trắng";
+        return false;
+      }
+    }
+
+    function ktLaiMatKhau() {
+      const value = document.getElementById("rematkhau").value.trim();
+      if (ckMatKhau()) {
+        if (value == document.getElementById("matkhau").value.trim()) {
+          document.getElementById("mgrematkhau").innerHTML = "Hợp lệ";
+          return true;
+        } else {
+          document.getElementById("mgrematkhau").innerHTML =
+            "Mật khẩu không khớp !";
+          return false;
+        }
+      }
+    }
+
+    function ckHoten() {
+      const value = document.getElementById("hoten").value.trim();
+      let regex = /^([A-Z]{1}[a-z]*)(\s[A-Z]{1}[a-z]*)*(\s[A-Z]{1}[a-z]*)$/;
+      if (regex.test(value)) {
+        document.getElementById("mghoten").innerHTML = "Hợp lệ";
+        return true;
+      } else {
+        document.getElementById("mghoten").innerHTML =
+          "Họ tên: Phải có ít nhất Họ, Tên. Ký tự đầu bắt buộc phải viết hoa";
+        return false;
+      }
+    }
+
+    function ckNgay() {
+      const value = document.getElementById("ngaysinh").value;
+      const date = new Date(value);
+      if (new Date().getFullYear() - date.getFullYear() > 16) {
+        document.getElementById("mgngaysinh").innerHTML = "Hợp lệ";
+        return true;
+      } else {
+        document.getElementById("mgngaysinh").innerHTML =
+          "Ngày tháng năm sinh phải trên 16 tuổi";
+        return false;
+      }
+    }
+
+    function ckDiaChi() {
+      if (document.getElementById("diachi").value.trim().length != 0) {
+        document.getElementById("mgdiachi").innerHTML = "Hợp lệ";
+        return true;
+      } else {
+        document.getElementById("mgdiachi").innerHTML =
+          "Địa chỉ không được để trống";
+        return false;
+      }
+    }
+
+    function ckDienThoai() {
+      const value = document.getElementById("dienthoai").value.trim();
+      let regex = /^(09||03||07||06||05||04)[0-9]{8}$/;
+      if (regex.test(value)) {
+        document.getElementById("mgdienthoai").innerHTML = "Hợp lệ";
+        return true;
+      } else {
+        document.getElementById("mgdienthoai").innerHTML =
+          "Điện thoại: là số điện thoại 10 ký tự số, bắt đầu là 09, 03, 07, 06, 05, 04";
+        return false;
+      }
+    }
+
+    function ckEmail() {
+      const value = document.getElementById("email").value.trim();
+      let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (regex.test(value)) {
+        document.getElementById("mgemail").innerHTML = "Hợp lệ";
+        return true;
+      } else {
+        document.getElementById("mgemail").innerHTML = "Email không hợp lệ !";
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>

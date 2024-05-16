@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="./plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="./plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" href="./plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="./dist/css/adminlte.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="./dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60" />
+        </div>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <button href="#" class="nav-link btn btn-clearlocal">
+                        <p class="dangnhap"></p>
+                    </button>
+                </li>
+                <!-- <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Contact</a>
+                </li> -->
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                    aria-label="Search" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside style="min-height: 100vh;" class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="info">
+                    <a href="#" class="d-block text-center">DEV CAMP</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Manage
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./user.html" class="nav-link ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>User</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./loaisanpham.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Danh Mục</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./nhasanxuat.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Hãng Sản Xuất</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./lienhe.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Liên Hệ</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Đơn hàng</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./sanpham.html" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sản Phẩm</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--  -->
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Sản Phẩm</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Sản Phẩm</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="col-sm-12 mt-5 mb-4 text-center">
+                <h2>Sửa Sản Phẩm</h2>
+            </div>
+            <div class="col-sm-12">
+                <form action="">
+                    <div class="col-sm-12 row ">
+                        <div class="col-sm-3">
+                            <span>Model</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-model">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row ">
+                        <div class="col-sm-3">
+                            <span>CPU</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-cpu">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>VGA</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-vga">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>RAM</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-ram">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Ổ Cứng</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-ocung">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Màn Hình</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-manhinh">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Kết Nối</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-ketnoi">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Cổng Giao Tiếp</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-conggt">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Webcam</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-webcam">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Hệ Điều Hành</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-hdh">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Pin</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-pin">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Kích Thước</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-kichthuoc">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Trọng Lượng</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-trongluong">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Màu Sắc</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-color">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Giá</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-price">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Hãng Sản Xuất</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-hangsx">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Hình Ảnh</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <img src="" alt="" width="20%" id="image">
+                            <input type="file" name="" id="inp-update-hinhanh">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Khuyến Mãi</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-km">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 row mt-2">
+                        <div class="col-sm-3">
+                            <span>Loại Sản Phẩm</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" name="" class="form-control" id="inp-update-loaisp">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 m-5 text-center">
+                        <input type="button" class="btn btn-success btn-update w-25 " value="Sửa">
+
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- /.content -->
+        <!-- /.content-wrapper -->
+    </div>
+    </div>
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 3.1.0
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="./plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="./plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="./plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="./plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="./plugins/jszip/jszip.min.js"></script>
+    <script src="./plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="./plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="./dist/js/adminlte.js"></script>
+    <script src="./src/sanpham.js"></script>
+    <script>
+        var stringUrl = window.location.search
+        const url = new URLSearchParams(stringUrl)
+        var id = url.get('id')
+        $.ajax({
+            type: "GET",
+            url: `http://localhost:8080/sanpham/${id}`,
+            dataType: "json",
+            success: function (response) {
+                var string = response.hinhAnh;
+                var chuoi = string.slice(12, string.length);
+                $("#inp-update-model").val(response.model)
+                $("#inp-update-cpu").val(response.cpu)
+                $("#inp-update-vga").val(response.vga)
+                $("#inp-update-ram").val(response.ram)
+                $("#inp-update-ocung").val(response.oCung)
+                $("#inp-update-manhinh").val(response.manHinh)
+                $("#inp-update-ketnoi").val(response.ketNoi)
+                $("#inp-update-conggt").val(response.congGiaoTiep)
+                $("#inp-update-webcam").val(response.webcam)
+                $("#inp-update-hdh").val(response.heDieuHanh)
+                $("#inp-update-pin").val(response.pin)
+                $("#inp-update-kichthuoc").val(response.kichThuoc)
+                $("#inp-update-trongluong").val(response.trongLuong)
+                $("#inp-update-color").val(response.mauSac)
+                $("#inp-update-price").val(response.gia)
+                $("#inp-update-hangsx").val(response.hangSanXuat)
+                $("#image").attr("src", `../../image/${chuoi}`);
+                $("#inp-update-image").val(chuoi)
+                $("#inp-update-km").val(response.khuyenMai)
+                $("#inp-update-loaisp").val(response.loaiSanPham)
+            }
+        });
+        $('.btn-update').on('click', function () {
+            onSaveSanPhamClick()
+        })
+        function onSaveSanPhamClick() {
+            this.newSanPham = {
+                id: 0,
+                model: $("#inp-update-model").val().trim(),
+                cpu: $("#inp-update-cpu").val().trim(),
+                vga: $("#inp-update-vga").val().trim(),
+                ram: $("#inp-update-ram").val().trim(),
+                oCung: $("#inp-update-ocung").val().trim(),
+                manHinh: $("#inp-update-manhinh").val().trim(),
+                ketNoi: $("#inp-update-ketnoi").val().trim(),
+                congGiaoTiep: $("#inp-update-conggt").val().trim(),
+                webcam: $("#inp-update-webcam").val().trim(),
+                heDieuHanh: $("#inp-update-hdh").val().trim(),
+                pin: $("#inp-update-pin").val().trim(),
+                kichThuoc: $("#inp-update-kichthuoc").val().trim(),
+                trongLuong: $("#inp-update-trongluong").val().trim(),
+                mauSac: $("#inp-update-color").val().trim(),
+                gia: $("#inp-update-price").val().trim(),
+                hangSanXuat: $("#inp-update-hangsx").val().trim(),
+                hinhAnh: $("#inp-update-hinhanh").val().trim(),
+                khuyenMai: $("#inp-update-km").val().trim(),
+                loaiSanPham: $("#inp-update-loaisp").val().trim(),
+            }
+            $.ajax({
+                url: `http://localhost:8080/sanpham/${id}`,
+                method: "PUT",
+                data: JSON.stringify(this.newSanPham),
+                contentType: "application/json",
+                success: (data) => {
+                    window.location.href = "http://127.0.0.1:5500/admin/sanpham.html"
+                },
+                error: (err) => alert(err.responseText),
+            })
+        }
+    </script>
+    <script>
+        var login = localStorage.getItem("login")
+        if (login != null) {
+            var temp = JSON.parse(login)
+            $(".dangnhap").html(temp.username)
+        }else{
+            $(".dangnhap").html("")
+        }
+        $(".btn-clearlocal").click(function () {
+            delete localStorage["login"]
+            window.location.href = "http://127.0.0.1:5500/index.html"
+        })
+    </script>
+</body>
+
+</html>

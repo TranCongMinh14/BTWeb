@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThongTin</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="2" class="text-center">
+                        <h1>THÔNG TIN CHI TIẾT</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Họ và tên:</td>
+                    <td id="txtHovaTen"></td>
+                </tr>
+                <tr>
+                    <td>Tên Đăng nhập:</td>
+                    <td id="txtTenDangNhap"></td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td id="txtMK"></td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh:</td>
+                    <td id="txtNgaySinh"></td>
+                </tr>
+                <tr>
+                    <td>Điện thoại:</td>
+                    <td id="txtNumber"></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <td id="txtDiaChi"></td>
+                </tr>
+                <tr>
+                    <td>Email khác:</td>
+                    <td id="txtEmail"></td>
+                </tr>
+                <tr>
+                    <td>Sở thích:</td>
+                    <td id="txtSoThich"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Lấy thông tin từ localStorage và cập nhật lên trang
+        document.getElementById("txtHovaTen").textContent = localStorage.getItem("HovaTen");
+        document.getElementById("txtTenDangNhap").textContent = localStorage.getItem("TenDangNhap");
+        document.getElementById("txtMK").textContent = localStorage.getItem("MatKhau");
+        document.getElementById("txtNgaySinh").textContent = localStorage.getItem("NgaySinh");
+        document.getElementById("txtNumber").textContent = localStorage.getItem("DienThoai");
+        document.getElementById("txtDiaChi").textContent = localStorage.getItem("DiaChi");
+        document.getElementById("txtEmail").textContent = localStorage.getItem("Email");
+        document.getElementById("txtSoThich").textContent = localStorage.getItem("SoThich");
+    </script>
+</body>
+
+</html>
